@@ -292,6 +292,7 @@
                                 </div>
                             </div>  
                         </div>
+
                         <!-- Row 4 -->
                         <div class="row-fluid">
                             <div class="span4">
@@ -302,12 +303,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- FIXME: load data/naf2008_liste_n5.csv to fill next field -->
                             <div class="span6 offset2">
                                 <div class="control-group">
                                     <label class="control-label" for="inputSecteurActivite">Secteur d'activité</label>
                                     <div class="controls">
-                                        <input class="input-large" id="inputSecteurActivite" type="text" placeholder="auto calculé selon code NAF">
+                                        <!-- FIXME: load data/naf2008_liste_n5.csv to fill next field -->
+                                        <span class="input-large uneditable-input" id="inputSecteurActivite">auto calculé selon code NAF</span>
                                     </div>
                                 </div>
                             </div>
@@ -338,6 +339,7 @@
                                 </div>
                             </div> 
                         </div>
+
                         <!-- Row 6 -->
                         <div class="row-fluid">
                             <div class="span4">
@@ -349,6 +351,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Row 7 -->
                         <div class="row-fluid">
                             <center>
@@ -356,6 +359,7 @@
                             </center>
                         </div>
                         <br>
+
                         <!-- Row 8 -->
                         <div class="row-fluid">
                             <div class="span8">
@@ -374,7 +378,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>   
+                        </div>
+
                         <!-- Row 9 -->
                         <div class="row-fluid">
                             <div class="span3">
@@ -392,12 +397,12 @@
                                         <input class="input-small" id="inputComplement" type="text">
                                     </div>
                                 </div>
-                                <div class="span3">
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputCodeVoie">Code Voie</label>
-                                        <div class="controls">
-                                            <input class="input-small" id="inputCodeVoie" type="text">
-                                        </div>
+                            </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCodeVoie">Code Voie</label>
+                                    <div class="controls">
+                                        <input class="input-small" id="inputCodeVoie" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -408,114 +413,118 @@
                                         <input class="input-small" id="inputVoie" type="text">
                                     </div>
                                 </div>
-                            </div>                                
-                            <!-- Row 10 -->
-                            <div class="row-fluid">
-                                <div class="span3 offset6">
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputCodePostal">Code Postal</label>
-                                        <div class="controls">
-                                            <input class="input-small" id="inputCodePostal" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span3">
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputVille">Ville</label>
-                                        <div class="controls">
-                                            <input class="input-small" id="inputVille" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                            <!-- Row 11 -->
-                            <div class="row-fluid">
-                                <div class="span4 offset4">
-                                    <span class="label label-info">Signataire</span>
-                                </div>
                             </div>
-                            <br>
-                            <!-- Row 12 -->
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
-                                        <div class="controls">
-                                            <select class="input-small" id="inputCiviliteSignataire">
-                                                <option>M.</option>
-                                                <option>Mme.</option>
-                                                <option>Mlle.</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>   
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputNomSignataire">Nom <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputNomSignataire" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputPrenomSignataire">Prénom <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputPrenomSignataire" type="text">
-                                        </div>
+                        </div>
+
+                        <!-- Row 10 -->
+                        <div class="row-fluid">
+                            <div class="span3 offset6">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCodePostal">Code Postal</label>
+                                    <div class="controls">
+                                        <input class="input-small" id="inputCodePostal" type="text">
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Row 13 -->
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél</abbr> <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputTelSignataire" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span4">
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputFaxSignataire">Fax</label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputFaxSignataire" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputEmailSignataire">Email <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputEmailSignataire" type="text">
-                                        </div>
+                            <div class="span3">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputVille">Ville</label>
+                                    <div class="controls">
+                                        <input class="input-small" id="inputVille" type="text">
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Row 14 -->
-                            <div class="row-fluid">
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputMobileSignataire">Mobile <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputMobileSignataire" type="text">
-                                        </div>
+                        </div>
+
+                        <!-- Row 11 -->
+                        <div class="row-fluid">
+                            <center>
+                                <span class="label label-info">Signataire</span>
+                            </center>
+                        </div>
+                        <br>
+
+                        <!-- Row 12 -->
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
+                                    <div class="controls">
+                                        <select class="input-small" id="inputCiviliteSignataire">
+                                            <option>M.</option>
+                                            <option>Mme.</option>
+                                            <option>Mlle.</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="span4">
-                                    <div class="control-group required text">
-                                        <label class="control-label" for="inputFonctionSignataire">Fonction <span class="mandatory">*</span></label>
-                                        <div class="controls">
-                                            <input class="input-medium" id="inputFonctionSignataire" type="text">
-                                        </div>
+                            </div>   
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputNomSignataire">Nom <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputNomSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputPrenomSignataire">Prénom <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputPrenomSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 13 -->
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél</abbr> <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputTelSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFaxSignataire">Fax</label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputFaxSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputEmailSignataire">Email <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputEmailSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 14 -->
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputMobileSignataire">Mobile <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputMobileSignataire" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group required text">
+                                    <label class="control-label" for="inputFonctionSignataire">Fonction <span class="mandatory">*</span></label>
+                                    <div class="controls">
+                                        <input class="input-medium" id="inputFonctionSignataire" type="text">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+
                     <fieldset>
                         <legend>Relation Contractuelle</legend>
                     </fieldset>
@@ -530,7 +539,7 @@
                                             <input type="radio" name="optionsRadiosRelationContractuelle" id="optionsRadiosRelationContractuelle1" value="option1" checked>
                                             Contrat
                                         </label>
-                                        <label class="radio inline">
+                                        <label class="radio inline hidden">
                                             <input type="radio" name="optionsRadiosRelationContractuelle" id="optionsRadiosRelationContractuelle12" value="option2">
                                             To Hide
                                         </label>
@@ -539,8 +548,9 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Row 2 -->
-                        <div class="row-fluid">
+                        <div id="rowRefContrat" class="row-fluid hidden">
                             <div class="span4 offset8">
                                 <div class="control-group text">
                                     <label class="control-label" for="inputRefContrat">Référence Contrat</label>
@@ -551,6 +561,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Row 3 -->
                         <div class="row-fluid">
                             <div class="span12">
@@ -570,20 +581,21 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Row 4 -->
-                        <div class="row-fluid">
+                        <div id="rowMotif" class="row-fluid hidden">
                             <div class="span8 offset4">
                                 <div class="control-group text">
                                     <label class="control-label" for="inputMotif">Motif</label>
                                     <div class="controls">
                                         <input class="input-xlarge" id="inputMotif" type="text">
                                     </div>
-                                    <!-- FIXME champ a masquer -->
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+
                 <div class="tab-pane" id="AvecRemise">
                     <div class="hero-unit">
                         <h1>Avec Remise</h1>

@@ -23,6 +23,10 @@ define(function (require, exports, module) {
             e.preventDefault();
             $(this).tab('show');
         });
+
+        $("#optionsRadiosNature1, #optionsRadiosNature2").on("change", function (event) {
+            $("#rowRefContrat, #rowMotif").toggleClass("hidden");
+        });
     }
 
     _initView();
