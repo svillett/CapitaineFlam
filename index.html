@@ -24,10 +24,7 @@
         </style>
         <link href="thirdparty/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
-        <!-- Datepicker for Bootstrap -->
-        <link href="thirdparty/datepicker/css/datepicker.css" rel="stylesheet">
-
-        <!-- Finaly load our stylesheet (chrome and IE does support less runtime compilation) -->
+        <!-- Finaly load our stylesheet (chrome does support less runtime compilation) -->
         <link href="styles/cf.less" rel="stylesheet/less">
         <!--link href="styles/cf.css" rel="stylesheet"-->
     </head>
@@ -69,7 +66,6 @@
             <fieldset>
                 <legend><a href="#" data-toggle="collapse" data-target="#BouyguesTelecom">Bouygues Telecom</a></legend>
             </fieldset>
-            <br>
             <form class="form-horizontal collapse in" id="BouyguesTelecom">
                 
                 <!-- Row 1 -->
@@ -78,7 +74,9 @@
                         <div class="control-group required date">
                             <label class="control-label" for="inputDate">Date <span class="mandatory">*</span></label>
                             <div class="controls">
-                                <input class="input-small" id="inputDate" type="text" value="1/1/1979">
+                                <div class="input-append">
+                                    <input class="input-small" id="inputDate" type="text" placeholder="DD/MM/YYYY"><button class="btn" type="button"><i class="icon-calendar"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -137,9 +135,9 @@
 
                 <!-- Row 4 -->
                 <div class="row-fluid">
-                    <center>
+                    <div class="span4 offset4">
                         <span class="label label-info">Identité du commercial (Visible sur le bon de commande)</span>
-                    </center>
+                    </div>
                 </div>
                 <br>
 
@@ -221,7 +219,6 @@
             <fieldset>
                 <legend><a href="#" data-toggle="collapse" data-target="#GammeProposeeAuClient">Gamme proposée au client</a></legend>
             </fieldset>
-            <br>
             <div class="container collapse in" id="GammeProposeeAuClient">
 
                 <ul class="nav nav-tabs" id="gamme">
@@ -234,10 +231,59 @@
                 <div class="tab-content">
 
                     <div class="tab-pane active" id="SansRemise">
-                        <div class="hero-unit">
-                            <h1>Sans Remise</h1>
-                            <p>Ici pas de remise</p>
+                        <div class="alert alert-info">
+                            <h1><center>Sans remise / avec avantages multi-lignes entreprises</center></h1>
                         </div>
+                        <fieldset>
+                            <legend><a href="#">Identification Client</a></legend>
+                        </fieldset>
+                        <form class="form-horizontal" id="formSansRemise">
+                            
+                            <!-- Row 1 -->
+                            <div class="row-fluid">
+                                <div class="span4 offset4">
+                                    <span class="label label-info">Société</span>
+                                </div>
+                            </div>
+                            <br>
+                                    
+                            <!-- Row 2 -->
+                            <div class="row-fluid">
+                                <div class="span8">
+                                    <div class="control-group required text">
+                                        <label class="control-label" for="inputRaisonSociale">Raison Sociale <span class="mandatory">*</span></label>
+                                        <div class="controls">
+                                            <input class="input-xxlarge" id="inputRaisonSociale" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Row 3 -->
+                            <div class="row-fluid">
+                                <div class="span8">
+                                    <div class="control-group required text">
+                                        <label class="control-label" for="inputSIREN">SIREN <span class="mandatory">*</span></label>
+                                        <div class="controls">
+                                            <input class="input-xxlarge" id="inputSIREN" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputNAF">Code NAF</label>
+                                        <div class="controls">
+                                            <select class="input-small" id="inputNAF">
+                                                <option>0111Z</option>
+                                                <option>0112Z</option>
+                                                <option>0113Z</option>
+                                                <option>0114Z</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </form>
                     </div>
 
                     <div class="tab-pane" id="AvecRemise">
@@ -276,7 +322,6 @@
         <!-- Javascript is declared here to increase page loading speed -->
         <script src="thirdparty/jquery-1.8.0.js"></script>
         <script src="thirdparty/bootstrap/js/bootstrap.js"></script>
-        <script src="thirdparty/datepicker/js/bootstrap-datepicker.js"></script>
         <script src="thirdparty/less-1.3.0.min.js"></script>
         <script src="thirdparty/require.js" data-main="cf"></script>
     </body>
