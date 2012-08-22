@@ -535,15 +535,18 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputRelationContractuelle">Relation contractuelle</label>
                                     <div class="controls">
-                                        <label class="radio inline offset1">
+                                        <!--<label class="radio inline offset1">
                                             <input type="radio" name="optionsRadiosRelationContractuelle" id="optionsRadiosRelationContractuelle1" value="option1" checked>
                                             Contrat
                                         </label>
                                         <label class="radio inline hidden">
                                             <input type="radio" name="optionsRadiosRelationContractuelle" id="optionsRadiosRelationContractuelle12" value="option2">
                                             To Hide
-                                        </label>
-                                        <!-- FIXME champ a masquer -->
+                                        </label>-->
+                                        <div class="btn-group" data-toggle="buttons-radio">
+                                            <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
+                                            <!--<button type="button" id="optionsRadiosRelationContractuelle2" class="btn btn-primary">To Hide</button>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -557,7 +560,6 @@
                                     <div class="controls">
                                         <input class="input-medium" id="inputRefContrat" type="text">
                                     </div>
-                                    <!-- FIXME champ a masquer -->
                                 </div>
                             </div>
                         </div>
@@ -568,15 +570,18 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputNature">Nature</label>
                                     <div class="controls">
-                                        <label class="radio inline offset1">
+                                        <!--<label class="radio inline offset1">
                                             <input type="radio" name="optionsRadiosNature" id="optionsRadiosNature1" value="option1" checked>
                                             Création
                                         </label>
                                         <label class="radio inline">
                                             <input type="radio" name="optionsRadiosNature" id="optionsRadiosNature2" value="option2">
                                             Révision (Annule &amp; Remplace)
-                                        </label>
-                                        <!-- FIXME champ a masquer -->
+                                        </label>-->
+                                        <div class="btn-group" data-toggle="buttons-radio">
+                                            <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
+                                            <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision (Annule &amp; Remplace)</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -593,6 +598,8 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                     </form>
                 </div>
 

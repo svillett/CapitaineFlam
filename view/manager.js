@@ -24,8 +24,16 @@ define(function (require, exports, module) {
             $(this).tab('show');
         });
 
-        $("#optionsRadiosNature1, #optionsRadiosNature2").on("change", function (event) {
+        /*$("#optionsRadiosNature1, #optionsRadiosNature2").on("change", function (event) {
             $("#rowRefContrat, #rowMotif").toggleClass("hidden");
+        });*/
+        
+        $("#optionsRadiosNature1").on("click", function (event) {
+            $("#rowRefContrat, #rowMotif").addClass("hidden");
+        });
+        
+        $("#optionsRadiosNature2").on("click", function (event) {
+            $("#rowRefContrat, #rowMotif").removeClass("hidden");
         });
     }
 
