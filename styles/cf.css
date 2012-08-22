@@ -1,0 +1,30 @@
+.box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+.hbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+}
+.vbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+}
+.mandatory {
+  color: #dc322f;
+}
+/* Override Bootstrap style */
+select:focus {
+  outline: 0;
+  /* disable the default focus */
+
+}
