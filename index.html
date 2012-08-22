@@ -240,6 +240,112 @@
                         <fieldset>
                             <legend><a href="#">Identification Client</a></legend>
                         </fieldset>
+                        <form class="form-horizontal" id="formSansRemise">
+                            
+                            <!-- Row 1 -->
+                            <div class="row-fluid">
+                                <div class="span4 offset4">
+                                    <span class="label label-info">Société</span>
+                                </div>
+                            </div>
+                            <br>
+                                    
+                            <!-- Row 2 -->
+                            <div class="row-fluid">
+                                <div class="span8">
+                                    <div class="control-group required text">
+                                        <label class="control-label" for="inputRaisonSociale">Raison Sociale <span class="mandatory">*</span></label>
+                                        <div class="controls">
+                                            <input class="input-xxlarge" id="inputRaisonSociale" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Row 3 -->
+                            <div class="row-fluid">
+                                <div class="span8">
+                                    <div class="control-group required text">
+                                        <label class="control-label" for="inputSIREN">SIREN <span class="mandatory">*</span></label>
+                                        <div class="controls">
+                                            <input class="input-xxlarge" id="inputSIREN" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputNAF">Code NAF</label>
+                                        <div class="controls">
+                                            <select class="input-small" id="inputNAF">
+                                                <option>0111Z</option>
+                                                <option>0112Z</option>
+                                                <option>0113Z</option>
+                                                <option>0114Z</option>
+                                                <!-- FIXME: load data/naf2008_liste_n5.csv -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                            <!-- Row 4 -->
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputCompteClient">Compte Client</label>
+                                        <div class="controls">
+                                            <input class="input-medium" id="inputCompteClient" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIXME: load data/naf2008_liste_n5.csv to fill next field -->
+                                <div class="span6 offset2">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputSecteurActivite">Secteur d'activité</label>
+                                        <div class="controls">
+                                            <input class="input-large" id="inputSecteurActivite" type="text" placeholder="auto calculé selon code NAF">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Row 5 -->
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputCodeGroupe">Code Groupe</label>
+                                        <div class="controls">
+                                            <input class="input-medium" id="inputCodeGroupe" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4 offset2">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputSegmentMarche">Segment marché <span class="mandatory">*</span></label>
+                                        <div class="controls">
+                                            <select class="input-small" id="inputSegmentMarche">
+                                                <option>GCN</option>
+                                                <option>CORP</option>
+                                                <option>MM</option>
+                                                <option>PME</option>
+                                                <option>Pro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <!-- Row 6 -->
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputNomGroupe">Nom du Groupe</label>
+                                        <div class="controls">
+                                            <input class="input-medium" id="inputNomGroupe" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
 
                     <div class="tab-pane" id="AvecRemise">
