@@ -19,21 +19,17 @@ define(function (require, exports, module) {
             format: "d/m/yyyy"
         });
 
-        $('#gamme a').click(function (e) {
+        $('#navGammes a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
         });
 
-        /*$("#optionsRadiosNature1, #optionsRadiosNature2").on("change", function (event) {
-            $("#rowRefContrat, #rowMotif").toggleClass("hidden");
-        });*/
-        
         $("#optionsRadiosNature1").on("click", function (event) {
-            $("#rowRefContrat, #rowMotif").addClass("hidden");
+            $("#rowNature").addClass("hidden");
         });
-        
+
         $("#optionsRadiosNature2").on("click", function (event) {
-            $("#rowRefContrat, #rowMotif").removeClass("hidden");
+            $("#rowNature").removeClass("hidden");
         });
     }
 

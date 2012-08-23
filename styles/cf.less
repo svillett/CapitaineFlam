@@ -1,29 +1,50 @@
 @import "cf-colors.less";
 @import "cf-shared.less";
 
+/* Mandatory fields are marked with a red star */
 .mandatory {
-    .text-shadow(2px, 2px, 7px, @bc-red);
-    color: @bc-red;
+    .text-shadow(2px, 2px, 7px, @cf-red);
+    color: @cf-red;
     font-size: 18px;
 }
 
+/* Legend of non collapsible bloc are written in orange */
+.legend-non-collapsible {
+	color: @cf-light-orange;
+}
+
+/* Special class for Code NAF's help-block */
+.code-naf-descs {
+	color: @cf-light-orange;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* The borders are only displayed on wild screens */
 @media (min-width: 1200px) {
 
-	.bordered {
-		.rounded-corners(12px);
-		border-left: 5px solid @border-color;
+	.bordered-non-collapsible {
+		border-left: 1px solid @cf-light-orange;
 	}
 
 	.bordered-collapsible {
-		.rounded-corners(12px);
-		border-left: 5px solid @border-collapsible-color;
+		border-left: 1px solid @cf-light-blue;
 	}
 
 }
 
-/* Override Bootstrap style */
-
-
+/* Don't focus the select inputs */
 select:focus {
-  outline: 0; /* disable the default focus */
+ 	outline: 0; /* disable the default focus */
+}
+
+/* Debug grid system */
+.show-grid [class*="span"] {
+ 	background-color: #eee;
+}
+.show-grid:hover [class*="span"] {
+ 	background: #ddd;
+}
+.show-grid .show-grid [class*="span"] {
+ 	background-color: #ccc;
 }

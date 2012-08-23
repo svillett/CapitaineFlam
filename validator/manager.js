@@ -6,9 +6,7 @@ define(function (require, exports, module) {
     'use strict';
 
     function _initValidator() {
-        var $generate = $("#generate");
-
-        $generate.on("click", function (event) {
+        $("#generateButton").on("click", function (event) {
             var required_fields = $(".required");
             required_fields.toggleClass("error");
         });

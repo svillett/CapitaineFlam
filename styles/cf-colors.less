@@ -1,17 +1,19 @@
-@bc-color-step-size: 10%;  
+/* Basic colors */
+@cf-black:           #000000;
+@cf-grey:            #808080;
+@cf-white:           #ffffff;
+@cf-yellow:          #b58900;
+@cf-orange:          #cb4b16;
+@cf-red:             #dc322f;
+@cf-magenta:         #d33682;
+@cf-violet:          #6c71c4;
+@cf-blue:            #268bd2;
+@cf-cyan:            #2aa198;
+@cf-green:           #859900;
 
-@bc-black:       #000000;
-@bc-grey:        #808080;
-@bc-white:       #ffffff;
-@bc-yellow:      #b58900;
-@bc-orange:      #cb4b16;
-@bc-red:         #dc322f;
-@bc-magenta:     #d33682;
-@bc-violet:      #6c71c4;
-@bc-blue:        #268bd2;
-@bc-light-blue:  #d8e0e8;
-@bc-cyan:        #2aa198;
-@bc-green:       #859900;
+/* Simple value for color steps */
+@cf-color-step-size: 10%;  
 
-@border-color:             darken(@bc-grey, @bc-color-step-size * 2);
-@border-collapsible-color: lighten(@bc-blue, @bc-color-step-size * 2);
+/* Light colors */
+@cf-light-orange:    lighten(@cf-orange, @cf-color-step-size * 2);
+@cf-light-blue:      lighten(@cf-blue, @cf-color-step-size * 2);
