@@ -1,18 +1,17 @@
-
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
-/*global define, $, localStorage */
+/*global define, localStorage */
 
 define(function (require, exports, module) {
     'use strict';
 
     var Storage = require("preferences/storage").Storage;
-    
+
     var PREFERENCES_KEY = "com.bouygtel.sie.cf.preferences";
 
     var preferencesKey,
         prefStorage,
         persistentStorage,
-        doLoadPreferences   = false;
+        doLoadPreferences = false;
 
     function getStorage(clientID, defaults) {
         if ((clientID === undefined) || (clientID === null)) {

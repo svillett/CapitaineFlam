@@ -1,5 +1,5 @@
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
-/*global require, define, cf, true, $, window, navigator */
+/*global require, define, cf, $, window */
 
 require.config({
     paths: {

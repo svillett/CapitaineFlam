@@ -11,7 +11,7 @@
     <!-- Bootstrap needs this to enable responsive features -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicons --> 
+    <!-- Favicons -->
     <link href="images/favicon.ico" rel="shortcut icon">
     <link href="images/animated_favicon1.gif" rel="icon" type="image/gif">
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -27,7 +27,7 @@
     <!-- Datepicker for Bootstrap -->
     <link href="thirdparty/datepicker/css/datepicker.css" rel="stylesheet">
 
-    <!-- Finaly load our stylesheet (IE does NOT support less runtime compilation) -->
+    <!-- Finally load our stylesheet (IE does NOT support less runtime compilation) -->
     <link href="styles/cf.less" rel="stylesheet/less">
     <!--link href="styles/cf.css" rel="stylesheet"-->
 </head>
@@ -149,7 +149,7 @@
 
                         <!-- Cell 1: 1 label (Identité du commercial)-->
                         <div class="span11 offset1">
-                            <span class="label label-info">Identité du commercial</span>
+                            <span class="label label-info">Identité du commercial (Visible sur le bon de commande)</span>
                         </div>
                     </div>
 
@@ -332,17 +332,12 @@
                                             <div class="span6">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
-                                                        <label class="control-label" for="inputNAF">Code NAF</label>
+                                                        <label class="control-label" for="inputCodeNAF">Code NAF</label>
                                                         <div class="controls">
-                                                            <select class="input-small" id="inputNAF">
-                                                                <option>0111Z</option>
-                                                                <option>0112Z</option>
-                                                                <option>0113Z</option>
-                                                                <option>0114Z</option>
-                                                                <!-- FIXME: load data/naf2008_liste_n5.csv -->
+                                                            <select class="input-small" id="inputCodeNAF">
+                                                                <!-- Populated by javascript -->
                                                             </select>
-                                                            <!-- FIXME: load data/naf2008_liste_n5.csv to fill next field -->
-                                                            <span class="help-block code-naf-descs">Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses</span>
+                                                            <span class="help-block code-naf-desc" id="inputCodeNAFDesc"><!-- Populated by javascript --></span>
                                                         </div>
                                                     </div>
                                                     <div class="control-group">
@@ -580,7 +575,7 @@
                                                                 <div class="control-group">
                                                                     <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
                                                                     <div class="controls">
-                                                                        <div class="btn-group" data-toggle="buttons-radio">
+                                                                        <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
                                                                             <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
                                                                             <!--<button type="button" id="optionsRadiosRelationContractuelle2" class="btn btn-primary">To Hide</button>-->
                                                                         </div>
@@ -599,9 +594,9 @@
                                                                 <div class="control-group">
                                                                     <label class="control-label" for="inputNature">Nature</label>
                                                                     <div class="controls">
-                                                                        <div class="btn-group" data-toggle="buttons-radio">
+                                                                        <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
                                                                             <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
-                                                                            <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision</button>
+                                                                            <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision (Annule &amp; Remplace)</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -681,7 +676,7 @@
     </div>
 
     <!-- Modal1: Importer ... -->
-    <div class="modal hide" id="modalImporter">
+    <div class="modal hide fade" id="modalImporter">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Importer &hellip;</h3>
@@ -696,7 +691,7 @@
     </div>
 
     <!-- Modal2: Exporter ... -->
-    <div class="modal hide" id="modalExporter">
+    <div class="modal hide fade" id="modalExporter">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Exporter &hellip;</h3>
