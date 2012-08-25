@@ -32,7 +32,7 @@
     <!--link href="styles/cf.css" rel="stylesheet"-->
 </head>
 <body>
-    <!-- The navbar is always visible a the top of the page -->
+    <!-- The navbar is always visible at the top of the page -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -72,7 +72,7 @@
                     <legend><a href="#" data-toggle="collapse" data-target="#divBouyguesTelecom">Bouygues Telecom</a></legend>
                 </fieldset>
 
-                <!-- Add a line beak before next contianer -->
+                <!-- Add a line break before next contianer -->
                 <br>
 
                 <div class="container-fuild collapse in bordered-collapsible" id="divBouyguesTelecom">
@@ -80,13 +80,14 @@
                     <!-- Row 1: 2 cells -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 from with 2 fields (Date, Code affaire) -->
+                        <!-- Cell 1: 1 form with 2 fields (Date, Code affaire) -->
                         <div class="span4">
                             <form class="form-horizontal">
                                 <div class="control-group required date">
                                     <label class="control-label" for="inputDate">Date <span class="mandatory">*</span></label>
                                     <div class="controls">
                                         <input class="input-small" id="inputDate" type="text" value="1/1/1979">
+                                        <!-- FIXME : add calendar datepicker -->
                                     </div>
                                 </div>
                                 <div class="control-group required text">
@@ -98,7 +99,7 @@
                             </form>
                         </div>
 
-                        <!-- Cell 2: 1 from with 2 fields (Code point de vente, Nom d'agence) -->
+                        <!-- Cell 2: 1 form with 2 fields (Code point de vente, Nom d'agence) -->
                         <div class="span6 offset2">
                             <form class="form-horizontal">
                                 <div class="control-group">
@@ -116,7 +117,7 @@
                                             <option>A&amp;D VENTE A DISTANCE 1</option>
                                             <option>A&amp;D VENTE A DISTANCE 2</option>
                                             <option>A&amp;D VENTE A DISTANCE ARIANE</option>
-                                            <!-- FIXME: Missing values here -->
+                                            <!-- FIXME: Missing values here. All values should be exported in a json file -->
                                         </select>
                                     </div>
                                 </div>
@@ -127,7 +128,7 @@
                     <!-- Row 2: 1 cell -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 from with 1 fields (Canal de vente)-->
+                        <!-- Cell 1: 1 form with 1 field (Canal de vente)-->
                         <div class="span6 offset3">
                             <form class="form-horizontal">
                                 <div class="control-group required text">
@@ -153,13 +154,13 @@
                         </div>
                     </div>
 
-                    <!-- Add a line beak before next row -->
+                    <!-- Add a line break before next row -->
                     <br>
 
                     <!-- Row 4: 3 cells -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 from with 3 fields (Civilité, Tél, Mobile) -->
+                        <!-- Cell 1: 1 form with 3 fields (Civilité, Tél, Mobile) -->
                         <div class="span3">
                             <form class="form-horizontal">
                                 <div class="control-group">
@@ -187,7 +188,7 @@
                             </form>
                         </div>
 
-                        <!-- Cell 2: 1 from with 2 fields (Nom, Fax) -->
+                        <!-- Cell 2: 1 form with 2 fields (Nom, Fax) -->
                         <div class="span3">
                             <form class="form-horizontal">
                                 <div class="control-group required text">
@@ -205,7 +206,7 @@
                             </form>
                         </div>
 
-                        <!-- Cell 3: 1 from with 2 fields (Prénom, Email) -->
+                        <!-- Cell 3: 1 form with 2 fields (Prénom, Email) -->
                         <div class="span3">
                             <form class="form-horizontal">
                                 <div class="control-group required text">
@@ -225,7 +226,7 @@
                     </div>
                 </div>
 
-                <!-- Add a line beak before next bloc -->
+                <!-- Add a line break before next bloc -->
                 <br>
 
                 <!-- Bloc 2 (Gamme proposée au client): 1 nav -->
@@ -233,7 +234,7 @@
                     <legend class="legend-non-collapsible">Gamme proposée au client</legend>
                 </fieldset>
 
-                <!-- Add a line beak before next contianer -->
+                <!-- Add a line break before next contianer -->
                 <br>
 
                 <div class="container-fluid bordered-non-collapsible">
@@ -262,7 +263,7 @@
                                         <legend><a href="#" data-toggle="collapse" data-target="#divSansRemise">Identification Client</a></legend>
                                     </fieldset>
 
-                                    <!-- Add a line beak before next contianer -->
+                                    <!-- Add a line break before next contianer -->
                                     <br>
 
                                     <div class="container-fuild collapse in bordered-collapsible" id="divSansRemise">
@@ -276,13 +277,13 @@
                                             </div>
                                         </div>
 
-                                        <!-- Add a line beak before next row -->
+                                        <!-- Add a line break before next row -->
                                         <br>
 
                                         <!-- Row 2: 1 cell -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 1 fields (Raison Sociale) -->
+                                            <!-- Cell 1: 1 form with 1 field (Raison Sociale) -->
                                             <div class="span12">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required text">
@@ -298,7 +299,7 @@
                                         <!-- Row 3: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 4 fields (SIREN, Compte Client, Code Groupe, Nom du Groupe) -->
+                                            <!-- Cell 1: 1 form with 4 fields (SIREN, Compte Client, Code Groupe, Nom du Groupe) -->
                                             <div class="span6">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required text">
@@ -328,7 +329,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 2: 1 from with 2 fields (Code NAF, Segment marché) -->
+                                            <!-- Cell 2: 1 form with 2 fields (Code NAF, Segment marché) -->
                                             <div class="span6">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
@@ -365,13 +366,13 @@
                                             </div>
                                         </div>
 
-                                        <!-- Add a line beak before next row -->
+                                        <!-- Add a line break before next row -->
                                         <br>
 
                                         <!-- Row 5: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 1 fields (Nom du site) -->
+                                            <!-- Cell 1: 1 form with 1 field (Nom du site) -->
                                             <div class="span6">
                                                 <form class="form-horizontal">
                                                     <div class="control-group text">
@@ -383,7 +384,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 2: 1 from with 1 fields (SIRET) -->
+                                            <!-- Cell 2: 1 form with 1 field (SIRET) -->
                                             <div class="span6">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
@@ -399,7 +400,7 @@
                                         <!-- Row 6: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 3 fields (N°, Code Voie, Code Postal) -->
+                                            <!-- Cell 1: 1 form with 3 fields (N°, Code Voie, Code Postal) -->
                                             <div class="span4">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
@@ -423,7 +424,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 2: 1 from with 3 fields (Complément, Voie, Ville) -->
+                                            <!-- Cell 2: 1 form with 3 fields (Complément, Voie, Ville) -->
                                             <div class="span8">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
@@ -457,13 +458,13 @@
                                             </div>
                                         </div>
 
-                                        <!-- Add a line beak before next row -->
+                                        <!-- Add a line break before next row -->
                                         <br>
 
                                         <!-- Row 8: 3 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 2 fields (Civilité, Tél) -->
+                                            <!-- Cell 1: 1 form with 2 fields (Civilité, Tél) -->
                                             <div class="span3">
                                                 <form class="form-horizontal">
                                                     <div class="control-group">
@@ -485,7 +486,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 2: 1 from with 2 fields (Nom, Fax) -->
+                                            <!-- Cell 2: 1 form with 2 fields (Nom, Fax) -->
                                             <div class="span3">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required text">
@@ -503,7 +504,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 3: 1 from with 2 fields (Prénom, Email) -->
+                                            <!-- Cell 3: 1 form with 2 fields (Prénom, Email) -->
                                             <div class="span3">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required text">
@@ -525,7 +526,7 @@
                                         <!-- Row 9: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 from with 1 fields (Mobile) -->
+                                            <!-- Cell 1: 1 form with 1 field (Mobile) -->
                                             <div class="span4">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required phone">
@@ -537,7 +538,7 @@
                                                 </form>
                                             </div>
 
-                                            <!-- Cell 2: 1 from with 1 fields (Fonction) -->
+                                            <!-- Cell 2: 1 form with 1 field (Fonction) -->
                                             <div class="span8">
                                                 <form class="form-horizontal">
                                                     <div class="control-group required text">
@@ -561,7 +562,7 @@
                                                     <legend><a href="#" data-toggle="collapse" data-target="#divSansRemiseRelationContractuelle">Relation contractuelle</a></legend>
                                                 </fieldset>
 
-                                                <!-- Add a line beak before next contianer -->
+                                                <!-- Add a line break before next contianer -->
                                                 <br>
 
                                                 <div class="container-fuild collapse in bordered-collapsible" id="divSansRemiseRelationContractuelle">
@@ -653,7 +654,7 @@
                     </div>
                 </div>
 
-                <!-- Add a line beak before next row -->
+                <!-- Add a line break before next row -->
                 <br>
 
                 <!-- Row 1: 1 cell -->
@@ -665,7 +666,7 @@
                     </div>
                 </div>
 
-                <!-- Add a line beak before footer -->
+                <!-- Add a line break before footer -->
                 <br>
 
                 <footer>
