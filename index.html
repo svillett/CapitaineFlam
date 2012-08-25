@@ -72,7 +72,7 @@
                     <legend><a href="#" data-toggle="collapse" data-target="#divBouyguesTelecom">Bouygues Telecom</a></legend>
                 </fieldset>
 
-                <!-- Add a line break before next contianer -->
+                <!-- Add a line break before next container -->
                 <br>
 
                 <div class="container-fuild collapse in bordered-collapsible" id="divBouyguesTelecom">
@@ -234,7 +234,7 @@
                     <legend class="legend-non-collapsible">Gamme proposée au client</legend>
                 </fieldset>
 
-                <!-- Add a line break before next contianer -->
+                <!-- Add a line break before next container -->
                 <br>
 
                 <div class="container-fluid bordered-non-collapsible">
@@ -263,7 +263,7 @@
                                         <legend><a href="#" data-toggle="collapse" data-target="#divSansRemise">Identification Client</a></legend>
                                     </fieldset>
 
-                                    <!-- Add a line break before next contianer -->
+                                    <!-- Add a line break before next container -->
                                     <br>
 
                                     <div class="container-fuild collapse in bordered-collapsible" id="divSansRemise">
@@ -562,7 +562,7 @@
                                                     <legend><a href="#" data-toggle="collapse" data-target="#divSansRemiseRelationContractuelle">Relation contractuelle</a></legend>
                                                 </fieldset>
 
-                                                <!-- Add a line break before next contianer -->
+                                                <!-- Add a line break before next container -->
                                                 <br>
 
                                                 <div class="container-fuild collapse in bordered-collapsible" id="divSansRemiseRelationContractuelle">
@@ -628,6 +628,840 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 2 (Solutions de téléphonie): 7 rows, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolTelephonie">Solutions de téléphonie</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolTelephonie">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Fixe Centrex) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeCentrex">
+                                                <caption class="label-info"><h4>Téléphonie Fixe Centrex</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelFixeCentrex to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixeCentrex value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeCentrex value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeCentrex value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 2: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Fixe Présélection) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixePresel">
+                                                <caption class="label-info"><h4>Téléphonie Fixe Présélection</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelFixePresel to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixePresel value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixePresel value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixePresel value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 3: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Fixe PBX) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixePBX">
+                                                <caption class="label-info"><h4>Téléphonie Fixe PBX</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelFixePBX to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixePBX value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixePBX value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixePBX value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 4: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Fixe analogique) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeAnalogique">
+                                                <caption class="label-info"><h4>Téléphonie Fixe analogique</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelFixeAnalogique to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixeAnalogique value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeAnalogique value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeAnalogique value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 5: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 form with 1 field (Activer Booster)-->
+                                            <div class="span6 offset3">
+                                                <form class="form-horizontal">
+                                                    <div class="control-group">
+                                                        <label class="checkbox" id="chkActiverBooster1">
+                                                          <input type="checkbox" value="">
+                                                          Activer Booster
+                                                        </label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 6: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Mobile ) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelMobile">
+                                                <caption class="label-info"><h4>Téléphonie Mobile</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelMobile to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelMobile value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelMobile value AND the booster -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelMobile value AND the booster -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 7: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Téléphonie Fixe-Mobile) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeMobile">
+                                                <caption class="label-info"><h4>Téléphonie Fixe-Mobile</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresTelFixeMobile to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixeMobile value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeMobile value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeMobile value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 3 (Solutions IT): 3 rows, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsIT">Solutions IT</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsIT">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Accès Internet) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAccesInternet">
+                                                <caption class="label-info"><h4>Accès Internet</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresAccesInternet to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresAccesInternet value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresAccesInternet value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresAccesInternet value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 2: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 form with 1 field (Activer Booster)-->
+                                            <div class="span6 offset3">
+                                                <form class="form-horizontal">
+                                                    <div class="control-group">
+                                                        <label class="checkbox" id="chkActiverBooster2">
+                                                          <input type="checkbox" value="">
+                                                          Activer Booster
+                                                        </label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 3: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Accès Internet Mobile) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAccesInternetMobile">
+                                                <caption class="label-info"><h4>Accès Internet Mobile</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresAccesInternetMobile to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresAccesInternetMobile value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresAccesInternetMobile value AND the booster -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresAccesInternetMobile value AND the booster -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 4 (Solutions M2M): 1 row, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsM2M">Solutions Machine To Machine</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsM2M">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Accès Internet) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsM2M">
+                                                <caption class="label-info"><h4>Solutions Machine To Machine</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresSolutionsM2M to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresSolutionsM2M value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresSolutionsM2M value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresSolutionsM2M value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 5 (Solutions Spécifiques): 1 row, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsSpecifiques">Solutions Spécifiques</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsSpecifiques">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Solutions Spécifiques) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsSpécifiques">
+                                                <caption class="label-info"><h4>Solutions Spécifiques</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Offres</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Offres is a list of values offresSolutionsSpecifiques to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresSolutionsSpecifiques value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresSolutionsSpecifiques value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresSolutionsSpecifiques value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 6 (Services et Prestation): 7 rows, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divServicesPrestations">Services et Prestations</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divServicesPrestations">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Réseaux et Sécurité) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabReseauxSecurite">
+                                                <caption class="label-info"><h4>Réseaux et Sécurité</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Services is a list of values servicesReseauxSecurite to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesReseauxSecurite value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesReseauxSecurite value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesReseauxSecurite value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 2: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Cloud) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabCloud">
+                                                <caption class="label-info"><h4>Cloud</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Services is a list of values servicesCloud to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesCloud value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesCloud value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesCloud value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 3: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Services liés aux équipements) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesEquipement">
+                                                <caption class="label-info"><h4>Services liés aux équipements</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Services is a list of values servicesServicesEquipement to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesEquipement value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesEquipement value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesEquipement value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 4: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Services support gestionnaire) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesGestionnaire">
+                                                <caption class="label-info"><h4>Services support gestionnaire</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- services is a list of values servicesServicesGestionnaire to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesGestionnaire value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesGestionnaire value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesGestionnaire value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 5: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Services support utilisateur) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesUtilisateur">
+                                                <caption class="label-info"><h4>Services support utilisateur</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Services is a list of values servicesServicesUtilisateur to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesUtilisateur value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesUtilisateur value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesUtilisateur value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 6: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Prestations d'accompagnement) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabPrestationsAccompagnement">
+                                                <caption class="label-info"><h4>Prestations d'accompagnement</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Services is a list of values servicesPrestationsAccompagnement to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesPrestationsAccompagnement value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesPrestationsAccompagnement value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesPrestationsAccompagnement value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next container -->
+                                        <br>
+
+                                        <!-- Row 7: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Services Spécifiques) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesSpecifiques">
+                                                <caption class="label-info"><h4>Services Spécifiques</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Service</th>
+                                                            <th>Engagement</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Service is a list of values servicesServicesSpecifiques to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesSpecifiques value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesSpecifiques value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesSpecifiques value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <!-- Bloc 7 (Autres Services Et Promotions): 2 rows, collapsible -->
+                                    <fieldset>
+                                        <legend><a href="#" data-toggle="collapse" data-target="#divServicesPromotions">Autres Services et Promotions</a></legend>
+                                    </fieldset>
+
+                                    <!-- Add a line break before next container -->
+                                    <br>
+
+                                    <div class="container-fuild collapse in bordered-collapsible" id="divServicesPromotions">
+
+                                        <!-- Row 1: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Frais de mise en service) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesFMS">
+                                                <caption class="label-info"><h4>Frais de mise en service</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>FMS</th>
+                                                            <th>Type</th>
+                                                            <th>Quantité</th>
+                                                            <th>Prix unitaire Brut</th>
+                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
+                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
+                                                            <th>Prix unitaire Net</th>
+                                                            <th>Montant total Brut</th>
+                                                            <th>Montant total Net</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- FMS is a list of values servicesFMS to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Type depends on the key servicesFMS value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesFMS value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesFMS value -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 2: 1 cell -->
+                                        <div class="row-fluid">
+
+                                            <!-- Cell 1: 1 Table (Avantages Clients) -->
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAvantagesClients">
+                                                <caption class="label-info"><h4>Avantages Clients</h4></caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Avantages Clients</th>
+                                                            <th>Type</th>
+                                                            <th>Quantité</th>
+                                                            <th>Montant total Brut</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
+                                                        <tr>
+                                                            <td></td> <!-- Avantages Clients is a list of values avantagesClients to be loaded from a json file -->
+                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Type depends on the key avantagesClients value -->
+                                                            <td></td> <!-- Quantité should always be a positive int -->
+                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
