@@ -1,12 +1,23 @@
 @import "cf-colors.less";
 @import "cf-shared.less";
 
+.header {
+	background-color: @cf-light-blue;
+}
+
 /* Mandatory fields are marked with a red star */
-/* FIXME : red stars are black in Chrome */
 .mandatory {
-    .text-shadow(2px, 2px, 7px, @cf-red);
-    color: @cf-red;
-    font-size: 18px;
+	.text-shadow(0px, 1px, 0px, @cf-white);
+	float: right;
+	font-size: 20px;
+	line-height: 20px;
+	color: @cf-red;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.mandatory:after {
+	    content: "*";
 }
 
 /* Legend of non collapsible bloc are written in orange */

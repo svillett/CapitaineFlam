@@ -19,8 +19,8 @@
     <!-- Load Bootstrap stylesheets -->
     <link href="thirdparty/bootstrap/css/bootstrap.css" rel="stylesheet">
     <style>
-    /* 60px to make the container go all the way to the bottom of the topbar */
-    body { padding-top: 60px; }
+        /* 60px to make the container go all the way to the bottom of the topbar */
+        body { padding-top: 60px; }
     </style>
     <link href="thirdparty/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -33,9 +33,9 @@
 </head>
 <body>
     <!-- The navbar is always visible at the top of the page -->
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -43,6 +43,7 @@
                 </a>
                 <a class="brand" href="#">Capitaine Flam</a>
                 <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">Logged in as Username</p>
                     <ul class="nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fichier <b class="caret"></b></a>
@@ -52,11 +53,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form pull-right">
-                        <input class="input-medium" id="username" type="text" placeholder="Je m'identifie">
-                        <input class="input-medium" id="password" type="text" placeholder="Mot de passe">
-                        <button class="btn btn-primary" type="button">Ok</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -65,6 +61,15 @@
     <!-- Global page container -->
     <div class="container-fuild">
         <div class="row-fluid">
+
+            <div class="span10 offset1">
+                <div class="hero-unit header">
+                    <img src="images/logo-bouygues-v2.png" class="img-rounded">
+                    <h1>Capitaine Flam</h1>
+                    <p>Application de prise de commandes du SI Bouygues Telecom Entreprise</p>
+                </div>
+            </div>
+
             <div class="span10 offset1">
 
                 <!-- Bloc 1 (Bouygues Telecom): 4 rows, collapsible -->
@@ -80,68 +85,61 @@
                     <!-- Row 1: 2 cells -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 form with 2 fields (Date, Code affaire) -->
-                        <div class="span4">
-                            <form class="form-horizontal">
-                                <div class="control-group required date">
-                                    <label class="control-label" for="inputDate">Date <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <input class="input-small" id="inputDate" type="text" value="1/1/1979">
-                                        <!-- FIXME : add calendar datepicker -->
-                                    </div>
+                        <!-- Cell 1: 2 fields (Date, Code affaire) -->
+                        <div class="span4 form-horizontal">
+                            <div class="control-group required date">
+                                <label class="control-label" for="inputDate">Date<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-small" id="inputDate" type="text" value="1/1/1979">
                                 </div>
-                                <div class="control-group required text">
-                                    <label class="control-label" for="inputCodeAffaire">Code affaire <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputCodeAffaire" type="text">
-                                    </div>
+                            </div>
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputCodeAffaire">Code affaire<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputCodeAffaire" type="text">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
-                        <!-- Cell 2: 1 form with 2 fields (Code point de vente, Nom d'agence) -->
-                        <div class="span6 offset2">
-                            <form class="form-horizontal">
-                                <div class="control-group">
-                                    <label class="control-label" for="inputCodePointDeVente">Code point de vente</label>
-                                    <div class="controls">
-                                        <input class="input-small" id="inputCodePointDeVente" type="text">
-                                    </div>
+                        <!-- Cell 2: 2 fields (Code point de vente, Nom d'agence) -->
+                        <div class="span6 offset2 form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputCodePointDeVente">Code point de vente</label>
+                                <div class="controls">
+                                    <input class="input-small" id="inputCodePointDeVente" type="text">
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputNomAgence">Nom d'agence</label>
-                                    <div class="controls">
-                                        <select class="input-medium" id="inputNomAgence">
-                                            <option>A&amp;D DEVELOPPEMENT</option>
-                                            <option>A&amp;D FIDELISATION</option>
-                                            <option>A&amp;D VENTE A DISTANCE 1</option>
-                                            <option>A&amp;D VENTE A DISTANCE 2</option>
-                                            <option>A&amp;D VENTE A DISTANCE ARIANE</option>
-                                            <!-- FIXME: Missing values here. All values should be exported in a json file -->
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputNomAgence">Nom d'agence</label>
+                                <div class="controls">
+                                    <select class="input-medium" id="inputNomAgence">
+                                        <option>A&amp;D DEVELOPPEMENT</option>
+                                        <option>A&amp;D FIDELISATION</option>
+                                        <option>A&amp;D VENTE A DISTANCE 1</option>
+                                        <option>A&amp;D VENTE A DISTANCE 2</option>
+                                        <option>A&amp;D VENTE A DISTANCE ARIANE</option>
+                                        <!-- FIXME: Missing values here. All values should be exported in a json file -->
+                                    </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Row 2: 1 cell -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 form with 1 field (Canal de vente)-->
-                        <div class="span6 offset3">
-                            <form class="form-horizontal">
-                                <div class="control-group required text">
-                                    <label class="control-label" for="inputCanalDeVente">Canal de vente <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <select class="input-small" id="inputCanalDeVente">
-                                            <option>VD</option>
-                                            <option>VI</option>
-                                            <option>VAD</option>
-                                        </select>
-                                    </div>
+                        <!-- Cell 1: 1 field (Canal de vente)-->
+                        <div class="span6 offset3 form-horizontal">
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputCanalDeVente">Canal de vente<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <select class="input-small" id="inputCanalDeVente">
+                                        <option>VD</option>
+                                        <option>VI</option>
+                                        <option>VAD</option>
+                                    </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -150,7 +148,7 @@
 
                         <!-- Cell 1: 1 label (Identité du commercial)-->
                         <div class="span11 offset1">
-                            <span class="label label-info">Identité du commercial (Visible sur le bon de commande)</span>
+                            <span class="label label-info">Identité du commercial</span>
                         </div>
                     </div>
 
@@ -160,68 +158,62 @@
                     <!-- Row 4: 3 cells -->
                     <div class="row-fluid">
 
-                        <!-- Cell 1: 1 form with 3 fields (Civilité, Tél, Mobile) -->
-                        <div class="span3">
-                            <form class="form-horizontal">
-                                <div class="control-group">
-                                    <label class="control-label" for="inputCivilite">Civilité</label>
-                                    <div class="controls">
-                                        <select class="input-small" id="inputCivilite">
-                                            <option>M.</option>
-                                            <option>Mme.</option>
-                                            <option>Mlle.</option>
-                                        </select>
-                                    </div>
+                        <!-- Cell 1: 3 fields (Civilité, Tél, Mobile) -->
+                        <div class="span3 form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputCivilite">Civilité</label>
+                                <div class="controls">
+                                    <select class="input-small" id="inputCivilite">
+                                        <option>M.</option>
+                                        <option>Mme.</option>
+                                        <option>Mlle.</option>
+                                    </select>
                                 </div>
-                                <div class="control-group required phone">
-                                    <label class="control-label" for="inputTel"><abbr title="Téléphone">Tél.</abbr> <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputTel" type="text">
-                                    </div>
+                            </div>
+                            <div class="control-group required phone">
+                                <label class="control-label" for="inputTel"><abbr title="Téléphone">Tél.</abbr><b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputTel" type="text">
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputMobile">Mobile</label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputMobile" type="text">
-                                    </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputMobile">Mobile</label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputMobile" type="text">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
-                        <!-- Cell 2: 1 form with 2 fields (Nom, Fax) -->
-                        <div class="span3">
-                            <form class="form-horizontal">
-                                <div class="control-group required text">
-                                    <label class="control-label" for="inputNom">Nom <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputNom" type="text">
-                                    </div>
+                        <!-- Cell 2: 2 fields (Nom, Fax) -->
+                        <div class="span3 form-horizontal">
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputNom">Nom<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputNom" type="text">
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputFax">Fax</label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputFax" type="text">
-                                    </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputFax">Fax</label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputFax" type="text">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
-                        <!-- Cell 3: 1 form with 2 fields (Prénom, Email) -->
-                        <div class="span3">
-                            <form class="form-horizontal">
-                                <div class="control-group required text">
-                                    <label class="control-label" for="inputPrenom">Prénom <span class="mandatory">*</span></label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputPrenom" type="text">
-                                    </div>
+                        <!-- Cell 3: 2 fields (Prénom, Email) -->
+                        <div class="span3 form-horizontal">
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputPrenom">Prénom<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputPrenom" type="text">
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Email</label>
-                                    <div class="controls">
-                                        <input class="input-medium" id="inputEmail" type="text">
-                                    </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Email</label>
+                                <div class="controls">
+                                    <input class="input-medium" id="inputEmail" type="text">
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,77 +275,71 @@
                                         <!-- Row 2: 1 cell -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 1 field (Raison Sociale) -->
-                                            <div class="span12">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required text">
-                                                        <label class="control-label" for="inputRaisonSociale">Raison Sociale <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-xxlarge" id="inputRaisonSociale" type="text">
-                                                        </div>
+                                            <!-- Cell 1: 1 field (Raison Sociale) -->
+                                            <div class="span12 form-horizontal">
+                                                <div class="control-group required text">
+                                                    <label class="control-label" for="inputRaisonSociale">Raison Sociale<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-xxlarge" id="inputRaisonSociale" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <!-- Row 3: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 4 fields (SIREN, Compte Client, Code Groupe, Nom du Groupe) -->
-                                            <div class="span6">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required text">
-                                                        <label class="control-label" for="inputSIREN">SIREN <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-large" id="inputSIREN" type="text">
-                                                        </div>
+                                            <!-- Cell 1: 4 fields (SIREN, Compte Client, Code Groupe, Nom du Groupe) -->
+                                            <div class="span6 form-horizontal">
+                                                <div class="control-group required text">
+                                                    <label class="control-label" for="inputSIREN">SIREN<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-large" id="inputSIREN" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCompteClient">Compte Client</label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputCompteClient" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCompteClient">Compte Client</label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputCompteClient" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCodeGroupe">Code Groupe</label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputCodeGroupe" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCodeGroupe">Code Groupe</label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputCodeGroupe" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputNomGroupe">Nom du Groupe</label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputNomGroupe" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputNomGroupe">Nom du Groupe</label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputNomGroupe" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 2: 1 form with 2 fields (Code NAF, Segment marché) -->
-                                            <div class="span6">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCodeNAF">Code NAF</label>
-                                                        <div class="controls">
-                                                            <select class="input-small" id="inputCodeNAF">
-                                                                <!-- Populated by javascript -->
-                                                            </select>
-                                                            <span class="help-block code-naf-desc" id="inputCodeNAFDesc"><!-- Populated by javascript --></span>
-                                                        </div>
+                                            <!-- Cell 2: 2 fields (Code NAF, Segment marché) -->
+                                            <div class="span6 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCodeNAF">Code NAF</label>
+                                                    <div class="controls">
+                                                        <select class="input-small" id="inputCodeNAF">
+                                                            <!-- Populated by javascript -->
+                                                        </select>
+                                                        <span class="help-block code-naf-desc" id="inputCodeNAFDesc"><!-- Populated by javascript --></span>
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputSegmentMarche">Segment marché <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <select class="input-small" id="inputSegmentMarche">
-                                                                <option>GCN</option>
-                                                                <option>CORP</option>
-                                                                <option>MM</option>
-                                                                <option>PME</option>
-                                                                <option>Pro</option>
-                                                            </select>
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputSegmentMarche">Segment marché<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <select class="input-small" id="inputSegmentMarche">
+                                                            <option>GCN</option>
+                                                            <option>CORP</option>
+                                                            <option>MM</option>
+                                                            <option>PME</option>
+                                                            <option>Pro</option>
+                                                        </select>
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>  
                                         </div>
 
@@ -372,80 +358,72 @@
                                         <!-- Row 5: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 1 field (Nom du site) -->
-                                            <div class="span6">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group text">
-                                                        <label class="control-label" for="inputNomSite">Nom du site</label>
-                                                        <div class="controls">
-                                                            <input class="input-xlarge" id="inputNomSite" type="text">
-                                                        </div>
+                                            <!-- Cell 1: 1 field (Nom du site) -->
+                                            <div class="span6 form-horizontal">
+                                                <div class="control-group text">
+                                                    <label class="control-label" for="inputNomSite">Nom du site</label>
+                                                    <div class="controls">
+                                                        <input class="input-xlarge" id="inputNomSite" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 2: 1 form with 1 field (SIRET) -->
-                                            <div class="span6">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputSIRET">SIRET</label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputSIRET" type="text">
-                                                        </div>
+                                            <!-- Cell 2: 1 field (SIRET) -->
+                                            <div class="span6 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputSIRET">SIRET</label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputSIRET" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <!-- Row 6: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 3 fields (N°, Code Voie, Code Postal) -->
-                                            <div class="span4">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputNumero">N°</label>
-                                                        <div class="controls">
-                                                            <input class="input-small" id="inputNumero" type="text">
-                                                        </div>
+                                            <!-- Cell 1: 3 fields (N°, Code Voie, Code Postal) -->
+                                            <div class="span4 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputNumero">N°</label>
+                                                    <div class="controls">
+                                                        <input class="input-small" id="inputNumero" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCodeVoie">Code Voie</label>
-                                                        <div class="controls">
-                                                            <input class="input-small" id="inputCodeVoie" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCodeVoie">Code Voie</label>
+                                                    <div class="controls">
+                                                        <input class="input-small" id="inputCodeVoie" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCodePostal">Code Postal</label>
-                                                        <div class="controls">
-                                                            <input class="input-small" id="inputCodePostal" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCodePostal">Code Postal</label>
+                                                    <div class="controls">
+                                                        <input class="input-small" id="inputCodePostal" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 2: 1 form with 3 fields (Complément, Voie, Ville) -->
-                                            <div class="span8">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputVoie">Voie</label>
-                                                        <div class="controls">
-                                                            <input class="input-xlarge" id="inputVoie" type="text">
-                                                        </div>
+                                            <!-- Cell 2: 3 fields (Complément, Voie, Ville) -->
+                                            <div class="span8 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputVoie">Voie</label>
+                                                    <div class="controls">
+                                                        <input class="input-xlarge" id="inputVoie" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputComplement">Complément</label>
-                                                        <div class="controls">
-                                                            <input class="input-xlarge" id="inputComplement" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputComplement">Complément</label>
+                                                    <div class="controls">
+                                                        <input class="input-xlarge" id="inputComplement" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputVille">Ville</label>
-                                                        <div class="controls">
-                                                            <input class="input-xlarge" id="inputVille" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputVille">Ville</label>
+                                                    <div class="controls">
+                                                        <input class="input-xlarge" id="inputVille" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -464,90 +442,80 @@
                                         <!-- Row 8: 3 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 2 fields (Civilité, Tél) -->
-                                            <div class="span3">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
-                                                        <div class="controls">
-                                                            <select class="input-small" id="inputCiviliteSignataire">
-                                                                <option>M.</option>
-                                                                <option>Mme.</option>
-                                                                <option>Mlle.</option>
-                                                            </select>
-                                                        </div>
+                                            <!-- Cell 1: 2 fields (Civilité, Tél) -->
+                                            <div class="span3 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
+                                                    <div class="controls">
+                                                        <select class="input-small" id="inputCiviliteSignataire">
+                                                            <option>M.</option>
+                                                            <option>Mme.</option>
+                                                            <option>Mlle.</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="control-group required phone">
-                                                        <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél.</abbr> <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputTelSignataire" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group required phone">
+                                                    <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél.</abbr><b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputTelSignataire" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 2: 1 form with 2 fields (Nom, Fax) -->
-                                            <div class="span3">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required text">
-                                                        <label class="control-label" for="inputNomSignataire">Nom <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputNomSignataire" type="text">
-                                                        </div>
+                                            <!-- Cell 2: 2 fields (Nom, Fax) -->
+                                            <div class="span3 form-horizontal">
+                                                <div class="control-group required text">
+                                                    <label class="control-label" for="inputNomSignataire">Nom<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputNomSignataire" type="text">
                                                     </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="inputFaxSignataire">Fax</label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputFaxSignataire" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputFaxSignataire">Fax</label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputFaxSignataire" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 3: 1 form with 2 fields (Prénom, Email) -->
-                                            <div class="span3">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required text">
-                                                        <label class="control-label" for="inputPrenomSignataire">Prénom <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputPrenomSignataire" type="text">
-                                                        </div>
+                                            <!-- Cell 3: 2 fields (Prénom, Email) -->
+                                            <div class="span3 form-horizontal">
+                                                <div class="control-group required text">
+                                                    <label class="control-label" for="inputPrenomSignataire">Prénom<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputPrenomSignataire" type="text">
                                                     </div>
-                                                    <div class="control-group required email">
-                                                        <label class="control-label" for="inputEmailSignataire">Email <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputEmailSignataire" type="text">
-                                                        </div>
+                                                </div>
+                                                <div class="control-group required email">
+                                                    <label class="control-label" for="inputEmailSignataire">Email<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputEmailSignataire" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <!-- Row 9: 2 cells -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 1 field (Mobile) -->
-                                            <div class="span4">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required phone">
-                                                        <label class="control-label" for="inputMobileSignataire">Mobile <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-medium" id="inputMobileSignataire" type="text">
-                                                        </div>
+                                            <!-- Cell 1: 1 field (Mobile) -->
+                                            <div class="span4 form-horizontal">
+                                                <div class="control-group required phone">
+                                                    <label class="control-label" for="inputMobileSignataire">Mobile<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-medium" id="inputMobileSignataire" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
 
-                                            <!-- Cell 2: 1 form with 1 field (Fonction) -->
-                                            <div class="span8">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group required text">
-                                                        <label class="control-label" for="inputFonctionSignataire">Fonction <span class="mandatory">*</span></label>
-                                                        <div class="controls">
-                                                            <input class="input-xlarge" id="inputFonctionSignataire" type="text">
-                                                        </div>
+                                            <!-- Cell 2: 1 field (Fonction) -->
+                                            <div class="span8 form-horizontal">
+                                                <div class="control-group required text">
+                                                    <label class="control-label" for="inputFonctionSignataire">Fonction<b class="mandatory"></b></label>
+                                                    <div class="controls">
+                                                        <input class="input-xlarge" id="inputFonctionSignataire" type="text">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -570,60 +538,54 @@
                                                     <!-- Row 1: 1 cell -->
                                                     <div class="row-fluid">
 
-                                                        <!-- Cell 1: 1 form with 1 field (Relation contractuelle) -->
-                                                        <div class="span12">
-                                                            <form class="form-horizontal">
-                                                                <div class="control-group">
-                                                                    <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
-                                                                    <div class="controls">
-                                                                        <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
-                                                                            <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
-                                                                            <!--<button type="button" id="optionsRadiosRelationContractuelle2" class="btn btn-primary">To Hide</button>-->
-                                                                        </div>
+                                                        <!-- Cell 1: 1 field (Relation contractuelle) -->
+                                                        <div class="span12 form-horizontal">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
+                                                                <div class="controls">
+                                                                    <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
+                                                                        <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
+                                                                        <!--<button type="button" id="optionsRadiosRelationContractuelle2" class="btn btn-primary">To Hide</button>-->
                                                                     </div>
                                                                 </div>
-                                                            </form>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <!-- Row 2: 1 cell -->
                                                     <div class="row-fluid">
 
-                                                        <!-- Cell 1: 1 form with 1 field (Relation contractuelle) -->
-                                                        <div class="span12">
-                                                            <form class="form-horizontal">
-                                                                <div class="control-group">
-                                                                    <label class="control-label" for="inputNature">Nature</label>
-                                                                    <div class="controls">
-                                                                        <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
-                                                                            <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
-                                                                            <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision (Annule &amp; Remplace)</button>
-                                                                        </div>
+                                                        <!-- Cell 1: 1 field (Relation contractuelle) -->
+                                                        <div class="span12 form-horizontal">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputNature">Nature</label>
+                                                                <div class="controls">
+                                                                    <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
+                                                                        <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
+                                                                        <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision</button>
                                                                     </div>
                                                                 </div>
-                                                            </form>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <!-- Row 3: 1 cell -->
                                                     <div class="row-fluid hidden" id="rowNature">
 
-                                                        <!-- Cell 1: 1 form with 2 field (Référence Contrat, Motif) -->
-                                                        <div class="span4 offset4">
-                                                            <form class="form-horizontal">
-                                                                <div class="control-group text">
-                                                                    <label class="control-label" for="inputRefContrat">Référence Contrat</label>
-                                                                    <div class="controls">
-                                                                        <input class="input-medium" id="inputRefContrat" type="text">
-                                                                    </div>
+                                                        <!-- Cell 1: 2 field (Référence Contrat, Motif) -->
+                                                        <div class="span4 offset4 form-horizontal">
+                                                            <div class="control-group text">
+                                                                <label class="control-label" for="inputRefContrat">Référence Contrat</label>
+                                                                <div class="controls">
+                                                                    <input class="input-medium" id="inputRefContrat" type="text">
                                                                 </div>
-                                                                <div class="control-group text">
-                                                                    <label class="control-label" for="inputMotif">Motif</label>
-                                                                    <div class="controls">
-                                                                        <input class="input-xlarge" id="inputMotif" type="text">
-                                                                    </div>
+                                                            </div>
+                                                            <div class="control-group text">
+                                                                <label class="control-label" for="inputMotif">Motif</label>
+                                                                <div class="controls">
+                                                                    <input class="input-xlarge" id="inputMotif" type="text">
                                                                 </div>
-                                                            </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -634,7 +596,7 @@
                                     <!-- Add a line break before next container -->
                                     <br>
 
-                                    <!-- Bloc 2 (Solutions de téléphonie): 7 rows, collapsible -->
+                                    <!-- Bloc 2 (Solutions de téléphonie): FIXME rows, collapsible -->
                                     <fieldset>
                                         <legend><a href="#" data-toggle="collapse" data-target="#divSolTelephonie">Solutions de téléphonie</a></legend>
                                     </fieldset>
@@ -647,9 +609,21 @@
                                         <!-- Row 1: 1 cell -->
                                         <div class="row-fluid">
 
+                                            <!-- Cell 1: 1 label (Téléphonie Fixe Centrex)-->
+                                            <div class="span11 offset1">
+                                                <span class="label label-info">Téléphonie Fixe Centrex</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Add a line break before next row -->
+                                        <br>
+
+                                        <!-- Row 2: 1 cell -->
+                                        <div class="row-fluid">
+
                                             <!-- Cell 1: 1 Table (Téléphonie Fixe Centrex) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeCentrex">
-                                                <caption class="label-info"><h4>Téléphonie Fixe Centrex</h4></caption>
+                                            <div class="span11 offset1">
+                                                <table class="table table-striped table-hover" id="tabTelFixeCentrex">
                                                     <thead>
                                                         <tr>
                                                             <th>Offres</th>
@@ -677,11 +651,10 @@
                                                             <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
                                                         </tr>
                                                     </tbody>
-                                            </table>
-                                        </div>
+                                                </table>
+                                            </div>
 
-                                        <!-- Add a line break before next row -->
-                                        <br>
+                                        </div>
 
                                         <!-- Row 2: 1 cell -->
                                         <div class="row-fluid">
@@ -803,16 +776,14 @@
                                         <!-- Row 5: 1 cell -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 1 field (Activer Booster)-->
-                                            <div class="span6 offset3">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="checkbox" id="chkActiverBooster1">
-                                                          <input type="checkbox" value="">
-                                                          Activer Booster
-                                                        </label>
-                                                    </div>
-                                                </form>
+                                            <!-- Cell 1: 1 field (Activer Booster)-->
+                                            <div class="span6 offset3 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="checkbox" id="chkActiverBooster1">
+                                                      <input type="checkbox" value="">
+                                                      Activer Booster
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -950,16 +921,14 @@
                                         <!-- Row 2: 1 cell -->
                                         <div class="row-fluid">
 
-                                            <!-- Cell 1: 1 form with 1 field (Activer Booster)-->
-                                            <div class="span6 offset3">
-                                                <form class="form-horizontal">
-                                                    <div class="control-group">
-                                                        <label class="checkbox" id="chkActiverBooster2">
-                                                          <input type="checkbox" value="">
-                                                          Activer Booster
-                                                        </label>
-                                                    </div>
-                                                </form>
+                                            <!-- Cell 1: 1 field (Activer Booster)-->
+                                            <div class="span6 offset3 form-horizontal">
+                                                <div class="control-group">
+                                                    <label class="checkbox" id="chkActiverBooster2">
+                                                      <input type="checkbox" value="">
+                                                      Activer Booster
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -1070,7 +1039,7 @@
                                         <div class="row-fluid">
 
                                             <!-- Cell 1: 1 Table (Solutions Spécifiques) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsSpécifiques">
+                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsSpecifiques">
                                                 <caption class="label-info"><h4>Solutions Spécifiques</h4></caption>
                                                     <thead>
                                                         <tr>
@@ -1511,7 +1480,7 @@
     </div>
 
     <!-- Modal1: Importer ... -->
-    <div class="modal hide fade" id="modalImporter">
+    <div class="modal hide" id="modalImporter">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Importer &hellip;</h3>
@@ -1526,7 +1495,7 @@
     </div>
 
     <!-- Modal2: Exporter ... -->
-    <div class="modal hide fade" id="modalExporter">
+    <div class="modal hide" id="modalExporter">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Exporter &hellip;</h3>
