@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var CodeNAFs = JSON.parse(require("text!data/codeNAFs.json"));
+    var OffresTelFixeCentrex = JSON.parse(require("text!data/offresTelFixeCentrex.json"));
 
     function _initView() {
 
@@ -52,6 +53,22 @@ define(function (require, exports, module) {
         $inputCodeNAF.on("change", function (event) {
             $inputCodeNAFDesc.text(CodeNAFs[event.target.value]);
         });
+
+        /* offresTelFixeCentrex */
+        var $inputOffresTelFixeCentrex = $("#inputOffresTelFixeCentrex"), 
+            $inputOffresTelFixeCentrexEngagement = $("#inputOffresTelFixeCentrexEngagement");
+
+        $.each(OffresTelFixeCentrex, function (key, value) {
+            $inputOffresTelFixeCentrex.append(new Option(key, key));
+        });
+
+        //FIXME
+        // $inputOffresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()]);
+
+        //FIXME
+        // $inputOffresTelFixeCentrex.on("change", function (event) {
+            // $inputOffresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[event.target.value]);
+        // });
     }
 
     _initView();
