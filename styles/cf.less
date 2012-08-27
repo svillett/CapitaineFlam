@@ -2,6 +2,8 @@
 @import "cf-shared.less";
 
 .header {
+	padding: 25px;
+	margin-bottom: 20px;
 	background-color: @cf-light-blue;
 }
 
@@ -32,8 +34,7 @@
 }
 
 /* The borders are only displayed on wild screens */
-@media (min-width: 1200px) {
-
+@media (min-width: 768px) {
 	.bordered-non-collapsible {
 		border-left: 1px solid @cf-light-orange;
 	}
@@ -41,12 +42,23 @@
 	.bordered-collapsible {
 		border-left: 1px solid @cf-light-blue;
 	}
-
 }
 
 /* Don't focus the select inputs */
 select:focus {
  	outline: 0; /* disable the default focus */
+}
+
+/* Allow horizontal scrollbars */ 
+.scrollable {
+	overflow-x: auto;
+}
+
+/* Table captions */
+table caption {
+	text-align: left;
+	font-size: 18px;
+	color: @cf-light-orange;
 }
 
 /* Debug grid system */

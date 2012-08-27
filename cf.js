@@ -11,8 +11,8 @@ define(function (require, exports, module) {
     'use strict';
 
     var PreferencesManager = require("preferences/manager"),
-        ViewManager = require("view/manager"),
-        ValidatorManager = require("validator/manager");
+        ViewManager        = require("view/manager"),
+        ValidatorManager   = require("validator/manager");
 
     function _initCf() {
         var Fn = Function, global = (new Fn('return this'))();

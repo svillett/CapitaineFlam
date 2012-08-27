@@ -18,85 +18,34 @@
 
     <!-- Load Bootstrap stylesheets -->
     <link href="thirdparty/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <style>
-        /* 60px to make the container go all the way to the bottom of the topbar */
-        body { padding-top: 60px; }
-    </style>
     <link href="thirdparty/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Datepicker for Bootstrap -->
     <link href="thirdparty/datepicker/css/datepicker.css" rel="stylesheet">
 
-    <!-- Finally load our stylesheet (IE does NOT support less runtime compilation) -->
+    <!-- Finally load our stylesheet (IE and Chrome don't support less runtime compilation) -->
     <link href="styles/cf.less" rel="stylesheet/less">
     <!--link href="styles/cf.css" rel="stylesheet"-->
 </head>
 <body>
-    <!-- The navbar is always visible at the top of the page -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="#">Capitaine Flam</a>
-                <div class="nav-collapse collapse">
-                    <!-- New user button. Looks prettier -->
-                    <div class="btn-group pull-right">
-                        <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Jean Dupont</a>
-                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="icon-pencil"></i> Editer profil</a></li>
-                            <li><a href="#"><i class="icon-trash"></i> Supprimer utilisateur</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="i"></i> Déconnecter</a></li>
-                        </ul>
-                    </div>
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fichier <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#modalImporter" data-toggle="modal">Importer &hellip;</a></li>
-                                <li><a href="#modalExporter" data-toggle="modal">Exporter &hellip;</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Page header -->
+    <header class="header">
+        <img src="images/logo-bouygues-v2.png" class="img-rounded">
+        <h1>Capitaine Flam</h1>
+        <p>Application de prise de commandes du SI Bouygues Telecom Entreprise</p>
+    </header>
 
     <!-- Global page container -->
     <div class="container-fuild">
         <div class="row-fluid">
-
             <div class="span10 offset1">
-                <div class="hero-unit header">
-                    <img src="images/logo-bouygues-v2.png" class="img-rounded">
-                    <h1>Capitaine Flam</h1>
-                    <p>Application de prise de commandes du SI Bouygues Telecom Entreprise</p>
-                </div>
-            </div>
-
-            <div class="span10 offset1">
-
-                <!-- Bloc 1 (Bouygues Telecom): 4 rows, collapsible -->
                 <fieldset>
                     <legend><a href="#" data-toggle="collapse" data-target="#divBouyguesTelecom">Bouygues Telecom</a></legend>
                 </fieldset>
-
-                <!-- Add a line break before next container -->
                 <br>
-
                 <div class="container-fuild collapse in bordered-collapsible" id="divBouyguesTelecom">
-
-                    <!-- Row 1: 2 cells -->
                     <div class="row-fluid">
-
-                        <!-- Cell 1: 2 fields (Date, Code affaire) -->
-                        <div class="span4 form-horizontal">
+                        <div class="span6 form-horizontal">
                             <div class="control-group required date">
                                 <label class="control-label" for="inputDate">Date<b class="mandatory"></b></label>
                                 <div class="controls">
@@ -110,36 +59,26 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Cell 2: 2 fields (Code point de vente, Nom d'agence) -->
-                        <div class="span6 offset2 form-horizontal">
+                        <div class="span6 form-horizontal">
                             <div class="control-group">
                                 <label class="control-label" for="inputCodePointDeVente">Code point de vente</label>
                                 <div class="controls">
-                                    <input class="input-small" id="inputCodePointDeVente" type="text">
+                                    <input class="input-medium" id="inputCodePointDeVente" type="text">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="inputNomAgence">Nom d'agence</label>
                                 <div class="controls">
-                                    <select class="input-medium" id="inputNomAgence">
-                                        <option>A&amp;D DEVELOPPEMENT</option>
-                                        <option>A&amp;D FIDELISATION</option>
-                                        <option>A&amp;D VENTE A DISTANCE 1</option>
-                                        <option>A&amp;D VENTE A DISTANCE 2</option>
-                                        <option>A&amp;D VENTE A DISTANCE ARIANE</option>
-                                        <!-- FIXME: Missing values here. All values should be exported in a json file -->
+                                    <select class="input-large" id="inputNomAgence">
+                                        <!-- Populated by javascript -->
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Row 2: 1 cell -->
+                    <br>
                     <div class="row-fluid">
-
-                        <!-- Cell 1: 1 field (Canal de vente)-->
-                        <div class="span6 offset3 form-horizontal">
+                        <div class="span4 offset4 form-horizontal">
                             <div class="control-group required text">
                                 <label class="control-label" for="inputCanalDeVente">Canal de vente<b class="mandatory"></b></label>
                                 <div class="controls">
@@ -152,24 +91,14 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Row 3: 1 cell -->
                     <div class="row-fluid">
-
-                        <!-- Cell 1: 1 label (Identité du commercial)-->
                         <div class="span11 offset1">
                             <span class="label label-info">Identité du commercial</span>
                         </div>
                     </div>
-
-                    <!-- Add a line break before next row -->
                     <br>
-
-                    <!-- Row 4: 3 cells -->
                     <div class="row-fluid">
-
-                        <!-- Cell 1: 3 fields (Civilité, Tél, Mobile) -->
-                        <div class="span3 form-horizontal">
+                        <div class="span6 form-horizontal">
                             <div class="control-group">
                                 <label class="control-label" for="inputCivilite">Civilité</label>
                                 <div class="controls">
@@ -180,6 +109,26 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputNom">Nom<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-large" id="inputNom" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group required text">
+                                <label class="control-label" for="inputPrenom">Prénom<b class="mandatory"></b></label>
+                                <div class="controls">
+                                    <input class="input-large" id="inputPrenom" type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Email</label>
+                                <div class="controls">
+                                    <input class="input-large" id="inputEmail" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span6 form-horizontal">
                             <div class="control-group required phone">
                                 <label class="control-label" for="inputTel"><abbr title="Téléphone">Tél.</abbr><b class="mandatory"></b></label>
                                 <div class="controls">
@@ -192,16 +141,6 @@
                                     <input class="input-medium" id="inputMobile" type="text">
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Cell 2: 2 fields (Nom, Fax) -->
-                        <div class="span3 form-horizontal">
-                            <div class="control-group required text">
-                                <label class="control-label" for="inputNom">Nom<b class="mandatory"></b></label>
-                                <div class="controls">
-                                    <input class="input-medium" id="inputNom" type="text">
-                                </div>
-                            </div>
                             <div class="control-group">
                                 <label class="control-label" for="inputFax">Fax</label>
                                 <div class="controls">
@@ -209,1322 +148,360 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Cell 3: 2 fields (Prénom, Email) -->
-                        <div class="span3 form-horizontal">
-                            <div class="control-group required text">
-                                <label class="control-label" for="inputPrenom">Prénom<b class="mandatory"></b></label>
-                                <div class="controls">
-                                    <input class="input-medium" id="inputPrenom" type="text">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
-                                <div class="controls">
-                                    <input class="input-medium" id="inputEmail" type="text">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Add a line break before next bloc -->
                 <br>
-
-                <!-- Bloc 2 (Gamme proposée au client): 1 nav -->
                 <fieldset>
                     <legend class="legend-non-collapsible">Gamme proposée au client</legend>
                 </fieldset>
-
-                <!-- Add a line break before next container -->
                 <br>
-
-                <div class="container-fluid bordered-non-collapsible">
+                <div class="container-fuild bordered-non-collapsible">
                     <div class="row-fluid">
-                        <div class="span12">
-
-                            <!-- Navbar: 4 tabs (Sans remise, Avec remise, Offres Pro, Marché Public) -->
-                            <ul class="nav nav-pills" id="navGammes">
-                                <li class="active"><a href="#tabSansRemise">Sans remise</a></li>
-                                <li><a href="#tabAvecRemise">Avec remise</a></li>
-                                <li><a href="#tabOffresPro">Offres Pro</a></li>
-                                <li><a href="#tabMarchePublic">Marché Public</a></li>
-                            </ul>
-
-                            <!-- TabPanes: 4 tabs (Sans remise, Avec remise, Offres Pro, Marché Public) -->
-                            <div class="tab-content">
-
-                                <!-- Tab 1 (Sans remise) -->
-                                <div class="tab-pane active" id="tabSansRemise">
+                        <div class="span12 form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for="inputGamme">Gamme</label>
+                                <div class="controls">
+                                    <ul class="nav nav-pills">
+                                        <li class="active"><a href="#">Sans remise</a></li>
+                                        <li><a href="#">Avec remise</a></li>
+                                        <li><a href="#">Offres Pro</a></li>
+                                        <li><a href="#">Marché Public</a></li>
+                                    </ul>
                                     <div class="alert alert-info">
                                         <h3>Sans remise / avec avantages multi-lignes entreprises</h3>
                                     </div>
-
-                                    <!-- Bloc 1 (Identification Client): 9 rows, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divSansRemise">Identification Client</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divSansRemise">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 label (Société)-->
-                                            <div class="span11 offset1">
-                                                <span class="label label-info">Société</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 field (Raison Sociale) -->
-                                            <div class="span12 form-horizontal">
-                                                <div class="control-group required text">
-                                                    <label class="control-label" for="inputRaisonSociale">Raison Sociale<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-xxlarge" id="inputRaisonSociale" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Row 3: 2 cells -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 4 fields (SIREN, Compte Client, Code Groupe, Nom du Groupe) -->
-                                            <div class="span6 form-horizontal">
-                                                <div class="control-group required text">
-                                                    <label class="control-label" for="inputSIREN">SIREN<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-large" id="inputSIREN" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCompteClient">Compte Client</label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputCompteClient" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCodeGroupe">Code Groupe</label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputCodeGroupe" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputNomGroupe">Nom du Groupe</label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputNomGroupe" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 2: 2 fields (Code NAF, Segment marché) -->
-                                            <div class="span6 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCodeNAF">Code NAF</label>
-                                                    <div class="controls">
-                                                        <select class="input-small" id="inputCodeNAF">
-                                                            <!-- Populated by javascript -->
-                                                        </select>
-                                                        <span class="help-block code-naf-desc" id="inputCodeNAFDesc"><!-- Populated by javascript --></span>
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputSegmentMarche">Segment marché<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <select class="input-small" id="inputSegmentMarche">
-                                                            <option>GCN</option>
-                                                            <option>CORP</option>
-                                                            <option>MM</option>
-                                                            <option>PME</option>
-                                                            <option>Pro</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                        </div>
-
-                                        <!-- Row 4: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 label (Société)-->
-                                            <div class="span11 offset1">
-                                                <span class="label label-info">Site Signataire</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 5: 2 cells -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 field (Nom du site) -->
-                                            <div class="span6 form-horizontal">
-                                                <div class="control-group text">
-                                                    <label class="control-label" for="inputNomSite">Nom du site</label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge" id="inputNomSite" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 2: 1 field (SIRET) -->
-                                            <div class="span6 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputSIRET">SIRET</label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputSIRET" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Row 6: 2 cells -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 3 fields (N°, Code Voie, Code Postal) -->
-                                            <div class="span4 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputNumero">N°</label>
-                                                    <div class="controls">
-                                                        <input class="input-small" id="inputNumero" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCodeVoie">Code Voie</label>
-                                                    <div class="controls">
-                                                        <input class="input-small" id="inputCodeVoie" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCodePostal">Code Postal</label>
-                                                    <div class="controls">
-                                                        <input class="input-small" id="inputCodePostal" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 2: 3 fields (Complément, Voie, Ville) -->
-                                            <div class="span8 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputVoie">Voie</label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge" id="inputVoie" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputComplement">Complément</label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge" id="inputComplement" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputVille">Ville</label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge" id="inputVille" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Row 7: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 label (Société)-->
-                                            <div class="span11 offset1">
-                                                <span class="label label-info">Signataire</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 8: 3 cells -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 2 fields (Civilité, Tél) -->
-                                            <div class="span3 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
-                                                    <div class="controls">
-                                                        <select class="input-small" id="inputCiviliteSignataire">
-                                                            <option>M.</option>
-                                                            <option>Mme.</option>
-                                                            <option>Mlle.</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="control-group required phone">
-                                                    <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél.</abbr><b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputTelSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 2: 2 fields (Nom, Fax) -->
-                                            <div class="span3 form-horizontal">
-                                                <div class="control-group required text">
-                                                    <label class="control-label" for="inputNomSignataire">Nom<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputNomSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="inputFaxSignataire">Fax</label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputFaxSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 3: 2 fields (Prénom, Email) -->
-                                            <div class="span3 form-horizontal">
-                                                <div class="control-group required text">
-                                                    <label class="control-label" for="inputPrenomSignataire">Prénom<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputPrenomSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group required email">
-                                                    <label class="control-label" for="inputEmailSignataire">Email<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputEmailSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Row 9: 2 cells -->
-                                        <div class="row-fluid show-grid">
-
-                                            <!-- Cell 1: 1 field (Mobile) -->
-                                            <div class="span4 form-horizontal">
-                                                <div class="control-group required phone">
-                                                    <label class="control-label" for="inputMobileSignataire">Mobile<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-medium" id="inputMobileSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Cell 2: 1 field (Fonction) -->
-                                            <div class="span8 form-horizontal">
-                                                <div class="control-group required text">
-                                                    <label class="control-label" for="inputFonctionSignataire">Fonction<b class="mandatory"></b></label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge" id="inputFonctionSignataire" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Row 10: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Bloc (Relation Contractuelle)-->
-                                            <div class="span11 offset1">
-
-                                                <!-- Bloc 1 (Relation Contractuelle): 3 rows, collapsible -->
-                                                <fieldset>
-                                                    <legend><a href="#" data-toggle="collapse" data-target="#divSansRemiseRelationContractuelle">Relation contractuelle</a></legend>
-                                                </fieldset>
-
-                                                <!-- Add a line break before next container -->
-                                                <br>
-
-                                                <div class="container-fuild collapse in bordered-collapsible" id="divSansRemiseRelationContractuelle">
-
-                                                    <!-- Row 1: 1 cell -->
-                                                    <div class="row-fluid">
-
-                                                        <!-- Cell 1: 1 field (Relation contractuelle) -->
-                                                        <div class="span12 form-horizontal">
-                                                            <div class="control-group">
-                                                                <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
-                                                                <div class="controls">
-                                                                    <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
-                                                                        <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
-                                                                        <!--<button type="button" id="optionsRadiosRelationContractuelle2" class="btn btn-primary">To Hide</button>-->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Row 2: 1 cell -->
-                                                    <div class="row-fluid">
-
-                                                        <!-- Cell 1: 1 field (Relation contractuelle) -->
-                                                        <div class="span12 form-horizontal">
-                                                            <div class="control-group">
-                                                                <label class="control-label" for="inputNature">Nature</label>
-                                                                <div class="controls">
-                                                                    <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
-                                                                        <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
-                                                                        <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Row 3: 1 cell -->
-                                                    <div class="row-fluid hidden" id="rowNature">
-
-                                                        <!-- Cell 1: 2 field (Référence Contrat, Motif) -->
-                                                        <div class="span4 offset4 form-horizontal">
-                                                            <div class="control-group text">
-                                                                <label class="control-label" for="inputRefContrat">Référence Contrat</label>
-                                                                <div class="controls">
-                                                                    <input class="input-medium" id="inputRefContrat" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="control-group text">
-                                                                <label class="control-label" for="inputMotif">Motif</label>
-                                                                <div class="controls">
-                                                                    <input class="input-xlarge" id="inputMotif" type="text">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span11 offset1">
+                            <fieldset>
+                                <legend><a href="#" data-toggle="collapse" data-target="#divSansRemise">Identification Client</a></legend>
+                            </fieldset>
+                            <br>
+                            <div class="container-fuild collapse in bordered-collapsible" id="divSansRemise">
+                                <div class="row-fluid">
+                                    <div class="span11 offset1">
+                                        <span class="label label-info">Société</span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row-fluid">
+                                    <div class="span12 form-horizontal">
+                                        <div class="control-group required text">
+                                            <label class="control-label" for="inputRaisonSociale">Raison Sociale<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-xxlarge" id="inputRaisonSociale" type="text">
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 2 (Solutions de téléphonie): FIXME rows, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolTelephonie">Solutions de téléphonie</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolTelephonie">
-
-                                        <!-- Add a line break before next row -->
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group required text">
+                                            <label class="control-label" for="inputSIREN">SIREN<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-large" id="inputSIREN" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCompteClient">Compte Client</label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputCompteClient" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCodeGroupe">Code Groupe</label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputCodeGroupe" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputNomGroupe">Nom du Groupe</label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputNomGroupe" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCodeNAF">Code NAF</label>
+                                            <div class="controls">
+                                                <select class="input-small" id="inputCodeNAF">
+                                                    <!-- Populated by javascript -->
+                                                </select>
+                                                <span class="help-block code-naf-desc" id="inputCodeNAFDesc"><!-- Populated by javascript --></span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputSegmentMarche">Segment marché<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <select class="input-small" id="inputSegmentMarche">
+                                                    <option>GCN</option>
+                                                    <option>CORP</option>
+                                                    <option>MM</option>
+                                                    <option>PME</option>
+                                                    <option>Pro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span11 offset1">
+                                        <span class="label label-info">Site Signataire</span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row-fluid">
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group text">
+                                            <label class="control-label" for="inputNomSite">Nom du site</label>
+                                            <div class="controls">
+                                                <input class="input-xlarge" id="inputNomSite" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputSIRET">SIRET</label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputSIRET" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span4 form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputNumero">N°</label>
+                                            <div class="controls">
+                                                <input class="input-small" id="inputNumero" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCodeVoie">Code Voie</label>
+                                            <div class="controls">
+                                                <input class="input-small" id="inputCodeVoie" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCodePostal">Code Postal</label>
+                                            <div class="controls">
+                                                <input class="input-small" id="inputCodePostal" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span8 form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputVoie">Voie</label>
+                                            <div class="controls">
+                                                <input class="input-xlarge" id="inputVoie" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputComplement">Complément</label>
+                                            <div class="controls">
+                                                <input class="input-xlarge" id="inputComplement" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputVille">Ville</label>
+                                            <div class="controls">
+                                                <input class="input-xlarge" id="inputVille" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span11 offset1">
+                                        <span class="label label-info">Signataire</span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row-fluid">
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputCiviliteSignataire">Civilité</label>
+                                            <div class="controls">
+                                                <select class="input-small" id="inputCiviliteSignataire">
+                                                    <option>M.</option>
+                                                    <option>Mme.</option>
+                                                    <option>Mlle.</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group required text">
+                                            <label class="control-label" for="inputNomSignataire">Nom<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-large" id="inputNomSignataire" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group required text">
+                                            <label class="control-label" for="inputPrenomSignataire">Prénom<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-large" id="inputPrenomSignataire" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group required email">
+                                            <label class="control-label" for="inputEmailSignataire">Email<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-large" id="inputEmailSignataire" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 form-horizontal">
+                                        <div class="control-group required phone">
+                                            <label class="control-label" for="inputTelSignataire"><abbr title="Téléphone">Tél.</abbr><b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputTelSignataire" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group required phone">
+                                            <label class="control-label" for="inputMobileSignataire">Mobile<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputMobileSignataire" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputFaxSignataire">Fax</label>
+                                            <div class="controls">
+                                                <input class="input-medium" id="inputFaxSignataire" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="control-group required text">
+                                            <label class="control-label" for="inputFonctionSignataire">Fonction<b class="mandatory"></b></label>
+                                            <div class="controls">
+                                                <input class="input-large" id="inputFonctionSignataire" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span11 offset1">
+                                        <fieldset>
+                                            <legend><a href="#" data-toggle="collapse" data-target="#divSansRemiseRelationContractuelle">Relation contractuelle</a></legend>
+                                        </fieldset>
                                         <br>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Row 1: 1 cell -->
+                                        <div class="container-fuild collapse in bordered-collapsible" id="divSansRemiseRelationContractuelle">
                                             <div class="row-fluid">
-
-                                                <!-- Cell 1: 1 label (Société)-->
-                                                <div class="span11 offset1">
-                                                    <span class="label label-info">Téléphonie Fixe Centrex</span>
+                                                <div class="span12 form-horizontal">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
+                                                        <div class="controls">
+                                                            <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
+                                                                <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Fixe Centrex) -->
-                                            <div class="span10 offset1">
-                                                <table class="table table-striped table-hover" id="tabTelFixeCentrex">
-                                                    <thead>
-                                                        <tr>
-                                                            <th width="30%">Offres</th>
-                                                            <th width="12%">Engagement</th>
-                                                            <th width="10%">Quantité</th>
-                                                            <th width="12%">Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th width="12%">Prix unitaire Net</th>
-                                                            <th width="12%">Montant total Brut</th>
-                                                            <th width="12%">Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <select id="inputOffresTelFixeCentrex">
-                                                                    <!-- Populated by javascript -->
-                                                                </select>
-                                                            </td>
-                                                            <!-- FIXME Engagement depends on the key offresTelFixeCentrex value -->
-                                                            <td class="help-block uneditable mytab" placeholder="-">
-                                                                <span class="help-block offresTelFixeCentrex-engagement" id="inputOffresTelFixeCentrexEngagement"><!-- Populated by javascript --></span>
-                                                            </td>
-                                                            <td class="mytab">0</td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable mytab">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeCentrex value -->
-                                                            <td class="uneditable mytab">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeCentrex value -->
-                                                            <td class="uneditable mytab">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable mytab">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="row-fluid">
+                                                <div class="span12 form-horizontal">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="inputNature">Nature</label>
+                                                        <div class="controls">
+                                                            <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
+                                                                <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
+                                                                <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                        </div>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Fixe Présélection) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixePresel">
-                                                <caption class="label-info"><h4>Téléphonie Fixe Présélection</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresTelFixePresel to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixePresel value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixePresel value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixePresel value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 3: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Fixe PBX) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixePBX">
-                                                <caption class="label-info"><h4>Téléphonie Fixe PBX</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresTelFixePBX to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixePBX value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixePBX value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixePBX value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 4: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Fixe analogique) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeAnalogique">
-                                                <caption class="label-info"><h4>Téléphonie Fixe analogique</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresTelFixeAnalogique to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixeAnalogique value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeAnalogique value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeAnalogique value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 5: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 field (Activer Booster)-->
-                                            <div class="span2 offset3 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="checkbox label-warning" id="chkActiverBooster1">
-                                                      <input type="checkbox" value="">
-                                                      Activer Booster
-                                                    </label>
+                                            <div class="row-fluid hidden" id="rowNature">
+                                                <div class="span4 offset4 form-horizontal">
+                                                    <div class="control-group text">
+                                                        <label class="control-label" for="inputRefContrat">Référence Contrat</label>
+                                                        <div class="controls">
+                                                            <input class="input-medium" id="inputRefContrat" type="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group text">
+                                                        <label class="control-label" for="inputMotif">Motif</label>
+                                                        <div class="controls">
+                                                            <input class="input-xlarge" id="inputMotif" type="text">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 6: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Mobile ) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelMobile">
-                                                <caption class="label-info"><h4>Téléphonie Mobile</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresTelMobile to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelMobile value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelMobile value AND the booster -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelMobile value AND the booster -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 7: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Téléphonie Fixe-Mobile) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabTelFixeMobile">
-                                                <caption class="label-info"><h4>Téléphonie Fixe-Mobile</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresTelFixeMobile to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresTelFixeMobile value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresTelFixeMobile value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresTelFixeMobile value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 3 (Solutions IT): 3 rows, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsIT">Solutions IT</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsIT">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Accès Internet) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAccesInternet">
-                                                <caption class="label-info"><h4>Accès Internet</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresAccesInternet to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresAccesInternet value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresAccesInternet value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresAccesInternet value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 field (Activer Booster)-->
-                                            <div class="span2 offset3 form-horizontal">
-                                                <div class="control-group">
-                                                    <label class="checkbox label-warning" id="chkActiverBooster2">
-                                                      <input type="checkbox" value="">
-                                                      Activer Booster
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 3: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Accès Internet Mobile) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAccesInternetMobile">
-                                                <caption class="label-info"><h4>Accès Internet Mobile</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresAccesInternetMobile to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresAccesInternetMobile value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresAccesInternetMobile value AND the booster -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresAccesInternetMobile value AND the booster -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 4 (Solutions M2M): 1 row, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsM2M">Solutions Machine To Machine</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsM2M">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Accès Internet) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsM2M">
-                                                <caption class="label-info"><h4>Solutions Machine To Machine</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresSolutionsM2M to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresSolutionsM2M value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresSolutionsM2M value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresSolutionsM2M value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 5 (Solutions Spécifiques): 1 row, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divSolutionsSpecifiques">Solutions Spécifiques</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divSolutionsSpecifiques">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Solutions Spécifiques) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabSolutionsSpecifiques">
-                                                <caption class="label-info"><h4>Solutions Spécifiques</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Offres</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Offres is a list of values offresSolutionsSpecifiques to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key offresSolutionsSpecifiques value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key offresSolutionsSpecifiques value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key offresSolutionsSpecifiques value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 6 (Services et Prestation): 7 rows, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divServicesPrestations">Services et Prestations</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divServicesPrestations">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Réseaux et Sécurité) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabReseauxSecurite">
-                                                <caption class="label-info"><h4>Réseaux et Sécurité</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Services is a list of values servicesReseauxSecurite to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesReseauxSecurite value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesReseauxSecurite value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesReseauxSecurite value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Cloud) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabCloud">
-                                                <caption class="label-info"><h4>Cloud</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Services is a list of values servicesCloud to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesCloud value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesCloud value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesCloud value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 3: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Services liés aux équipements) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesEquipement">
-                                                <caption class="label-info"><h4>Services liés aux équipements</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Services is a list of values servicesServicesEquipement to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesEquipement value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesEquipement value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesEquipement value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 4: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Services support gestionnaire) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesGestionnaire">
-                                                <caption class="label-info"><h4>Services support gestionnaire</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- services is a list of values servicesServicesGestionnaire to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesGestionnaire value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesGestionnaire value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesGestionnaire value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 5: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Services support utilisateur) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesUtilisateur">
-                                                <caption class="label-info"><h4>Services support utilisateur</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Services is a list of values servicesServicesUtilisateur to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesUtilisateur value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesUtilisateur value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesUtilisateur value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 6: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Prestations d'accompagnement) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabPrestationsAccompagnement">
-                                                <caption class="label-info"><h4>Prestations d'accompagnement</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Services is a list of values servicesPrestationsAccompagnement to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesPrestationsAccompagnement value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesPrestationsAccompagnement value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesPrestationsAccompagnement value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next container -->
-                                        <br>
-
-                                        <!-- Row 7: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Services Spécifiques) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesSpecifiques">
-                                                <caption class="label-info"><h4>Services Spécifiques</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Service</th>
-                                                            <th>Engagement</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Service is a list of values servicesServicesSpecifiques to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Engagement depends on the key servicesServicesSpecifiques value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesServicesSpecifiques value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesServicesSpecifiques value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <!-- Bloc 7 (Autres Services Et Promotions): 2 rows, collapsible -->
-                                    <fieldset>
-                                        <legend><a href="#" data-toggle="collapse" data-target="#divServicesPromotions">Autres Services et Promotions</a></legend>
-                                    </fieldset>
-
-                                    <!-- Add a line break before next container -->
-                                    <br>
-
-                                    <div class="container-fuild collapse in bordered-collapsible" id="divServicesPromotions">
-
-                                        <!-- Row 1: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Frais de mise en service) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabServicesFMS">
-                                                <caption class="label-info"><h4>Frais de mise en service</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>FMS</th>
-                                                            <th>Type</th>
-                                                            <th>Quantité</th>
-                                                            <th>Prix unitaire Brut</th>
-                                                            <!--<th>% de remise</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Prix unitaire Remisé</th> does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Nombre de mois offerts</th>  does not appear in 'sans remise' mode -->
-                                                            <!-- <th>Récurrence des mois offerts</th> does not appear in 'sans remise' mode -->
-                                                            <th>Prix unitaire Net</th>
-                                                            <th>Montant total Brut</th>
-                                                            <th>Montant total Net</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- FMS is a list of values servicesFMS to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Type depends on the key servicesFMS value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Brut depends on the key servicesFMS value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Prix unitaire Net depends on the key servicesFMS value -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Net =  Quantité * Prix unitaire Net -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Add a line break before next row -->
-                                        <br>
-
-                                        <!-- Row 2: 1 cell -->
-                                        <div class="row-fluid">
-
-                                            <!-- Cell 1: 1 Table (Avantages Clients) -->
-                                            <table class="table table-striped table-bordered table-hover table-condensed" id="tabAvantagesClients">
-                                                <caption class="label-info"><h4>Avantages Clients</h4></caption>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Avantages Clients</th>
-                                                            <th>Type</th>
-                                                            <th>Quantité</th>
-                                                            <th>Montant total Brut</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- FIXME number of rows is dynamic. Add a button to add/delete rows -->
-                                                        <tr>
-                                                            <td></td> <!-- Avantages Clients is a list of values avantagesClients to be loaded from a json file -->
-                                                            <td class="uneditable" placeholder="-"></td> <!-- FIXME Type depends on the key avantagesClients value -->
-                                                            <td></td> <!-- Quantité should always be a positive int -->
-                                                            <td class="uneditable">0,00 €</td> <!-- Montant unitaire Brut =  Quantité * Prix unitaire Brut -->
-                                                        </tr>
-                                                    </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane" id="tabAvecRemise">
-                                    <div class="alert alert-info">
-                                        <h3>Ici plein de remises</h3>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane" id="tabOffresPro">
-                                    <div class="alert alert-info">
-                                        <h3>Ici c'est pour les Pros</h3>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane" id="tabMarchePublic">
-                                    <div class="alert alert-info">
-                                        <h3>Ici c'est publique</h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Add a line break before next row -->
                 <br>
-
-                <!-- Row 1: 1 cell -->
-                <div class="row-fluid">
-
-                    <!-- Cell 1: 1 button (Générer) -->
-                    <div class="span6 offset3">
-                        <button id="generateButton" type="button" class="btn btn-large btn-block btn-primary">Générer</button>
+                <fieldset>
+                    <legend><a href="#" data-toggle="collapse" data-target="#divSolTelephonie">Solutions de téléphonie</a></legend>
+                </fieldset>
+                <br>
+                <div class="container-fuild collapse in bordered-collapsible" id="divSolTelephonie">
+                    <div class="row-fluid">
+                        <div class="span10 offset1 scrollable">
+                            <table class="table table-striped table-hover" id="tabTelFixeCentrex">
+                                <caption>
+                                    <div class="btn-group pull-right">
+                                        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Actions
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Ajouter ligne</a></li>
+                                            <li><a href="#">Supprimer ligne</a></li>
+                                        </ul>
+                                    </div>
+                                    Téléphonie Fixe Centrex
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th>Offres</th>
+                                        <th>Engagement</th>
+                                        <th>Quantité</th>
+                                        <th>Prix unitaire Brut</th>
+                                        <th class="hidden">% de remise</th>
+                                        <th class="hidden">Prix unitaire Remisé</th>
+                                        <th class="hidden">Nombre de mois offerts</th>
+                                        <th class="hidden">Récurrence des mois offerts</th>
+                                        <th>Prix unitaire Net</th>
+                                        <th>Montant total Brut</th>
+                                        <th>Montant total Net</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <select class="input-large" id="inputOffresTelFixeCentrex">
+                                                <!-- Populated by javascript -->
+                                            </select>
+                                        </td>
+                                        <td id="offresTelFixeCentrexEngagement"><!-- Populated by javascript --></td>
+                                        <td><input class="input-small" type="number" id="offresTelFixeCentrexQuantite" min="0" value="0"></td>
+                                        <td id="offresTelFixeCentrexPrixBrut"><!-- Populated by javascript --></td>
+                                        <td class="hidden" id="offresTelFixeCentrexRemise"><!-- Populated by javascript --></td>
+                                        <td class="hidden" id="offresTelFixeCentrexPrixRemise"><!-- Populated by javascript --></td>
+                                        <td class="hidden" id="offresTelFixeCentrexPrixMois"><!-- Populated by javascript --></td>
+                                        <td class="hidden" id="offresTelFixeCentrexPrixRecurrence"><!-- Populated by javascript --></td>
+                                        <td id="offresTelFixeCentrexPrixNet"><!-- Populated by javascript --></td>
+                                        <td id="offresTelFixeCentrexMontantBrut"><!-- Populated by javascript --></td>
+                                        <td id="offresTelFixeCentrexMontantNet"><!-- Populated by javascript --></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Add a line break before footer -->
                 <br>
-
+                <button id="generateButton" type="button" class="btn btn-large btn-block btn-primary">Générer</button>
+                <br>
                 <footer>
                     <p class="pull-right">&copy; Bouygues Telecom 2012</p>
                 </footer>
             </div>
         </div>
     </div>
-
-    <!-- Modal1: Importer ... -->
-    <div class="modal hide" id="modalImporter">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Importer &hellip;</h3>
-        </div>
-        <div class="modal-body">
-            <p>One fine body</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Annuler</button>
-            <button class="btn btn-primary">Importer</button>
-        </div>
-    </div>
-
-    <!-- Modal2: Exporter ... -->
-    <div class="modal hide" id="modalExporter">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Exporter &hellip;</h3>
-        </div>
-        <div class="modal-body">
-            <p>One fine body</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Annuler</button>
-            <button class="btn btn-primary">Exporter</button>
-        </div>
-    </div>
-
     <!-- Javascript is declared here to increase page loading speed -->
     <script src="thirdparty/jquery-1.8.0.js"></script>
     <script src="thirdparty/bootstrap/js/bootstrap.js"></script>

@@ -1,9 +1,37 @@
 {
-	"AC1 CTX Fixe Classique D" : {"Engagement" : "36 mois", "Prix_Brut" : "13,00 €", "Prix_Brut" : "13,00 €"},
-	"AC3 CTX Fixe Flotte D" : {"Engagement" : "36 mois", "Prix_Brut" : "25,00 €", "Prix_Brut" : "25,00 €"},
-	"AC5 CTX Fixe 24/7 D" : {"Engagement" : "36 mois", "Prix_Brut" : "49,00 €", "Prix_Brut" : "49,00 €"},
-	"AC6 CTX Raccordement DP" : {"Engagement" : "36 mois", "Prix_Brut" : "0,00 €", "Prix_Brut" : "0,00 €"},
-	"AC7 CTX Raccordement DT" : {"Engagement" : "36 mois", "Prix_Brut" : "0,00 €", "Prix_Brut" : "0,00 €"},
-	"AT2 Solution Fax Virtuel" : {"Engagement" : "36 mois", "Prix_Brut" : "18,00 €", "Prix_Brut" : "18,00 €"},
-	"AT3 Solution SVI" : {"Engagement" : "36 mois", "Prix_Brut" : "50,00 €", "Prix_Brut" : "50,00 €"}
+	"AC1 CTX Fixe Classique D" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 13.00,
+		"prixNet" : 13.00
+	},
+	"AC3 CTX Fixe Flotte D" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 25.00,
+		"prixNet" : 25.00
+	},
+	"AC5 CTX Fixe 24/7 D" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 49.00,
+		"prixNet" : 49.00
+	},
+	"AC6 CTX Raccordement DP" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 0.00,
+		"prixNet" : 0.00
+	},
+	"AC7 CTX Raccordement DT" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 0.00,
+		"prixNet" : 0.00
+	},
+	"AT2 Solution Fax Virtuel" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 18.00,
+		"prixNet" : 18.00
+	},
+	"AT3 Solution SVI" : {
+		"engagement" : "36 mois",
+		"prixBrut" : 50.00,
+		"prixNet" : 50.00
+	}
 }
