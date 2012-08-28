@@ -50,11 +50,11 @@ define(function (require, exports, module) {
     }
 
     function _initNature() {
-        $("#optionsRadiosNature1").on("click", function (event) {
+        $("#natureCreation").on("click", function (event) {
             $("#rowNature").addClass("hidden");
         });
 
-        $("#optionsRadiosNature2").on("click", function (event) {
+        $("#natureRevision").on("click", function (event) {
             $("#rowNature").removeClass("hidden");
         });
     }

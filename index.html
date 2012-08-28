@@ -161,12 +161,13 @@
                             <div class="control-group">
                                 <label class="control-label" for="inputGamme">Gamme</label>
                                 <div class="controls">
-                                    <ul class="nav nav-pills">
-                                        <li class="active"><a href="#">Sans remise</a></li>
-                                        <li><a href="#">Avec remise</a></li>
-                                        <li><a href="#">Offres Pro</a></li>
-                                        <li><a href="#">Marché Public</a></li>
-                                    </ul>
+                                    <div class="btn-group" id="inputGamme" data-toggle="buttons-radio">
+                                        <button type="button" id="gammeSansRemise" class="btn btn-small btn-primary active">Sans remise</button>
+                                        <button type="button" id="gammeAvecRemise" class="btn btn-small btn-primary">Avec remise</button>
+                                        <button type="button" id="gammeOffresPro" class="btn btn-small btn-primary">Offres Pro</button>
+                                        <button type="button" id="gammeMarchePublic" class="btn btn-small btn-primary">Marché Public</button>
+                                    </div>
+                                    <br>
                                     <div class="alert alert-info">
                                         <h3>Sans remise / avec avantages multi-lignes entreprises</h3>
                                     </div>
@@ -391,7 +392,7 @@
                                                         <label class="control-label" for="inputRelationContractuelle">Relation <abbr title="Contractuelle">Contract.</abbr></label>
                                                         <div class="controls">
                                                             <div class="btn-group" id="inputRelationContractuelle" data-toggle="buttons-radio">
-                                                                <button type="button" id="optionsRadiosRelationContractuelle1" class="btn btn-primary active">Contrat</button>
+                                                                <button type="button" id="relationContractuelleContrat" class="btn btn-small btn-primary active">Contrat</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -403,8 +404,8 @@
                                                         <label class="control-label" for="inputNature">Nature</label>
                                                         <div class="controls">
                                                             <div class="btn-group" id="inputNature" data-toggle="buttons-radio">
-                                                                <button type="button" id="optionsRadiosNature1" class="btn btn-primary active">Création</button>
-                                                                <button type="button" id="optionsRadiosNature2" class="btn btn-primary">Révision</button>
+                                                                <button type="button" id="natureCreation" class="btn btn-small btn-primary active">Création</button>
+                                                                <button type="button" id="natureRevision" class="btn btn-small btn-primary">Révision</button>
                                                             </div>
                                                         </div>
                                                     </div>

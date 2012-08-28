@@ -2,9 +2,11 @@
 @import "cf-shared.less";
 
 .header {
-	padding: 25px;
+	padding: 25px 50px;
 	margin-bottom: 20px;
 	background-color: @cf-light-blue;
+	font-size: 24px;
+	line-height: 26px;
 }
 
 /* Mandatory fields are marked with a red star */
@@ -36,10 +38,12 @@
 /* The borders are only displayed on wild screens */
 @media (min-width: 768px) {
 	.bordered-non-collapsible {
+		.rounded-corners(15px);
 		border-left: 1px solid @cf-light-orange;
 	}
 
 	.bordered-collapsible {
+		.rounded-corners(15px);
 		border-left: 1px solid @cf-light-blue;
 	}
 }
