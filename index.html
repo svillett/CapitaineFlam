@@ -442,17 +442,11 @@
                 <div class="container-fuild collapse in bordered-collapsible" id="divSolTelephonie">
                     <div class="row-fluid">
                         <div class="span10 offset1 scrollable">
-                            <table class="table table-striped table-hover" id="tabTelFixeCentrex">
+                            <table class="table table-striped table-hover" id="tableOffresTelFixeCentrex">
                                 <caption>
                                     <div class="btn-group pull-right">
-                                        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Actions
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Ajouter ligne</a></li>
-                                            <li><a href="#">Supprimer ligne</a></li>
-                                        </ul>
+                                        <button class="btn btn-mini" id="ajouterOffresTelFixeCentrex">Ajouter</button>
+                                        <button class="btn btn-mini disabled" id="supprimerOffresTelFixeCentrex">Supprimer</button>
                                     </div>
                                     Téléphonie Fixe Centrex
                                 </caption>
@@ -472,23 +466,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <select class="input-large" id="inputOffresTelFixeCentrex">
-                                                <!-- Populated by javascript -->
-                                            </select>
-                                        </td>
-                                        <td id="offresTelFixeCentrexEngagement"><!-- Populated by javascript --></td>
-                                        <td><input class="input-small" type="number" id="offresTelFixeCentrexQuantite" min="0" value="0"></td>
-                                        <td id="offresTelFixeCentrexPrixBrut"><!-- Populated by javascript --></td>
-                                        <td class="hidden" id="offresTelFixeCentrexRemise"><!-- Populated by javascript --></td>
-                                        <td class="hidden" id="offresTelFixeCentrexPrixRemise"><!-- Populated by javascript --></td>
-                                        <td class="hidden" id="offresTelFixeCentrexPrixMois"><!-- Populated by javascript --></td>
-                                        <td class="hidden" id="offresTelFixeCentrexPrixRecurrence"><!-- Populated by javascript --></td>
-                                        <td id="offresTelFixeCentrexPrixNet"><!-- Populated by javascript --></td>
-                                        <td id="offresTelFixeCentrexMontantBrut"><!-- Populated by javascript --></td>
-                                        <td id="offresTelFixeCentrexMontantNet"><!-- Populated by javascript --></td>
-                                    </tr>
+                                    <!-- Populated by javascript -->
                                 </tbody>
                             </table>
                         </div>

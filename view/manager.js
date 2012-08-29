@@ -1,13 +1,14 @@
-
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
 /*global define, $, Option */
 
 define(function (require, exports, module) {
-    'use strict';
+    "use strict";
 
     var NomsAgence           = JSON.parse(require("text!data/nomsAgence.json")),
         CodesNAF             = JSON.parse(require("text!data/codesNAF.json")),
         OffresTelFixeCentrex = JSON.parse(require("text!data/offresTelFixeCentrex.json"));
+
+    var OffresTelFixeCentrexTemplate = require("text!templates/offresTelFixeCentrex.html");
 
     function _inputDate() {
         var $inputDate = $("#inputDate");
@@ -59,14 +60,18 @@ define(function (require, exports, module) {
         });
     }
 
-    function _initOffresTelFixeCentrex() {
-        var $inputOffresTelFixeCentrex       = $("#inputOffresTelFixeCentrex"),
-            $offresTelFixeCentrexEngagement  = $("#offresTelFixeCentrexEngagement"),
-            $offresTelFixeCentrexQuantite    = $("#offresTelFixeCentrexQuantite"),
-            $offresTelFixeCentrexPrixBrut    = $("#offresTelFixeCentrexPrixBrut"),
-            $offresTelFixeCentrexPrixNet     = $("#offresTelFixeCentrexPrixNet"),
-            $offresTelFixeCentrexMontantBrut = $("#offresTelFixeCentrexMontantBrut"),
-            $offresTelFixeCentrexMontantNet  = $("#offresTelFixeCentrexMontantNet");
+    function _initOffresTelFixeCentrexRow(id) {
+        var $tabTelFixeCentrex = $("#tableOffresTelFixeCentrex tbody");
+
+        $tabTelFixeCentrex.append(OffresTelFixeCentrexTemplate.replace(/@id/g, id));
+
+        var $inputOffresTelFixeCentrex         = $("#inputOffresTelFixeCentrex" + id),
+            $offresTelFixeCentrexEngagement    = $("#offresTelFixeCentrexEngagement" + id),
+            $inputOffresTelFixeCentrexQuantite = $("#inputOffresTelFixeCentrexQuantite" + id),
+            $offresTelFixeCentrexPrixBrut      = $("#offresTelFixeCentrexPrixBrut" + id),
+            $offresTelFixeCentrexPrixNet       = $("#offresTelFixeCentrexPrixNet" + id),
+            $offresTelFixeCentrexMontantBrut   = $("#offresTelFixeCentrexMontantBrut" + id),
+            $offresTelFixeCentrexMontantNet    = $("#offresTelFixeCentrexMontantNet" + id);
 
         $.each(OffresTelFixeCentrex, function (key, value) {
             $inputOffresTelFixeCentrex.append(new Option(key, key));
@@ -75,21 +80,49 @@ define(function (require, exports, module) {
         $offresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].engagement);
         $offresTelFixeCentrexPrixBrut.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixBrut + " €");
         $offresTelFixeCentrexPrixNet.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixNet + " €");
-        $offresTelFixeCentrexMontantBrut.text(parseFloat($offresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
-        $offresTelFixeCentrexMontantNet.text(parseFloat($offresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
+        $offresTelFixeCentrexMontantBrut.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
+        $offresTelFixeCentrexMontantNet.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
 
         $inputOffresTelFixeCentrex.on("change", function (event) {
             $offresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[event.target.value].engagement);
             $offresTelFixeCentrexPrixBrut.text(OffresTelFixeCentrex[event.target.value].prixBrut + " €");
             $offresTelFixeCentrexPrixNet.text(OffresTelFixeCentrex[event.target.value].prixNet + " €");
-            $offresTelFixeCentrexMontantBrut.text(parseFloat($offresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
-            $offresTelFixeCentrexMontantNet.text(parseFloat($offresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
+            $offresTelFixeCentrexMontantBrut.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
+            $offresTelFixeCentrexMontantNet.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
         });
 
-        $offresTelFixeCentrexQuantite.on("change", function (event) {
+        $inputOffresTelFixeCentrexQuantite.on("change", function (event) {
             $offresTelFixeCentrexMontantBrut.text(parseFloat(event.target.value) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
             $offresTelFixeCentrexMontantNet.text(parseFloat(event.target.value) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
         });
+    }
+
+    var i = 0;
+
+    function _initOffresTelFixeCentrex() {
+        $("#ajouterOffresTelFixeCentrex").on("click", function (event) {
+            var count = $('#tableOffresTelFixeCentrex tbody tr').length;
+
+            _initOffresTelFixeCentrexRow(count);
+
+            if ($("#supprimerOffresTelFixeCentrex").hasClass("disabled")) {
+                $("#supprimerOffresTelFixeCentrex").removeClass("disabled");
+            }
+        });
+
+        $("#supprimerOffresTelFixeCentrex").on("click", function (event) {
+            var count = $('#tableOffresTelFixeCentrex tbody tr').length;
+
+            if (!$("#supprimerOffresTelFixeCentrex").hasClass("disabled")) {
+                if (count === 2) {
+                    $("#supprimerOffresTelFixeCentrex").toggleClass("disabled");
+                }
+
+                $('#tableOffresTelFixeCentrex tbody tr:last').remove();
+            }
+        });
+
+        _initOffresTelFixeCentrexRow(0);
     }
 
     function _initView() {
