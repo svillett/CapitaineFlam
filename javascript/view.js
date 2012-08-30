@@ -11,50 +11,16 @@ define(function (require, exports, module) {
     var offresTelFixeCentrexTemplate = require("text!templates/offresTelFixeCentrex.html");
 
     function _initBtnCollapse() {
-        var $buttonBouyguesTelecom                           = $("#buttonBouyguesTelecom"),
-            $buttonGammeProposeeAuClient                     = $("#buttonGammeProposeeAuClient"),
-            $buttonIdentificationClient                      = $("#buttonIdentificationClient"),
-            $buttonIdentificationClientRelationContractuelle = $("#buttonIdentificationClientRelationContractuelle"),
-            $buttonSolutionTelephonie                        = $("#buttonSolutionTelephonie");
+        var $btnCollapse = $(".btn-collapse");
 
-        $buttonBouyguesTelecom.on("click", function (event) {
-            if ($buttonBouyguesTelecom.text() === "Réduire") {
-                $buttonBouyguesTelecom.text("Déplier");
-            } else {
-                $buttonBouyguesTelecom.text("Réduire");
-            }
-        });
-
-        $buttonGammeProposeeAuClient.on("click", function (event) {
-            if ($buttonGammeProposeeAuClient.text() === "Réduire") {
-                $buttonGammeProposeeAuClient.text("Déplier");
-            } else {
-                $buttonGammeProposeeAuClient.text("Réduire");
-            }
-        });
-
-        $buttonIdentificationClient.on("click", function (event) {
-            if ($buttonIdentificationClient.text() === "Réduire") {
-                $buttonIdentificationClient.text("Déplier");
-            } else {
-                $buttonIdentificationClient.text("Réduire");
-            }
-        });
-
-        $buttonIdentificationClientRelationContractuelle.on("click", function (event) {
-            if ($buttonIdentificationClientRelationContractuelle.text() === "Réduire") {
-                $buttonIdentificationClientRelationContractuelle.text("Déplier");
-            } else {
-                $buttonIdentificationClientRelationContractuelle.text("Réduire");
-            }
-        });
-
-        $buttonSolutionTelephonie.on("click", function (event) {
-            if ($buttonSolutionTelephonie.text() === "Réduire") {
-                $buttonSolutionTelephonie.text("Déplier");
-            } else {
-                $buttonSolutionTelephonie.text("Réduire");
-            }
+        $btnCollapse.each(function (index, btn) {
+            $(btn).on("click", function (event) {
+                if ($(btn).text() === "Réduire") {
+                    $(btn).text("Déplier");
+                } else {
+                    $(btn).text("Réduire");
+                }
+            });
         });
     }
 
