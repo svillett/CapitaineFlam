@@ -1,11 +1,11 @@
 @import "cf-colors.less";
 @import "cf-shared.less";
 
-/* The page header */
+/* Page header */
 .header {
-	.box-shadow(5px, 5px, 15px, @cf-black);
+	.box-shadow(0px, 3px, 7px, @cf-black);
 	padding: 25px 50px;
-	margin-bottom: 20px;
+	margin-bottom: 70px;
 	border: 1px solid @cf-black;
 	background: -webkit-linear-gradient(45deg, #020031 0%,@cf-light-blue 100%);
 	background: -moz-linear-gradient(45deg, #020031 0%, @cf-light-blue 100%);
@@ -13,6 +13,45 @@
 	color: @cf-white;
 	font-size: 24px;
 	line-height: 26px;
+}
+
+/* Footer */
+.footer {
+  padding: 70px 50px;
+  margin-top: 70px;
+  border-top: 1px solid @cf-light-grey;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: @cf-grey;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Legends */
+legend {
+	color: @cf-blue;
+	font-weight: bold;
+}
+.legend1 {
+	font-size: 30px;
+}
+.legend2 {
+	font-size: 24px;
+}
+.legend3 {
+	font-size: 18px;
+}
+
+/* A bigger line break */
+.line-break {
+	padding-top: 50px;
 }
 
 /* Mandatory fields are marked with a red star */
@@ -29,30 +68,9 @@
 	content: "*";
 }
 
-/* Legends */
-legend {
-	font-weight: bold;
-}
-.legend-collapsible {
-	color: @cf-blue;
-}
-.legend-non-collapsible {
+/* Help blocks */
+.help-block-orange {
 	color: @cf-light-orange;
-}
-.legend1 {
-	font-size: 30px;
-}
-.legend2 {
-	font-size: 24px;
-}
-.legend3 {
-	font-size: 18px;
-}
-
-/* Special class for Code NAF's help-block */
-.code-naf-desc {
-	color: @cf-light-orange;
-	font-size: 12px;
 	font-weight: bold;
 }
 
