@@ -10,8 +10,8 @@ require.config({
 define(function (require, exports, module) {
     "use strict";
 
-    var ViewManager      = require("view/manager"),
-        ValidatorManager = require("validator/manager");
+    var view      = require("javascript/view"),
+        validator = require("javascript/validator");
 
     function _initCf() {
         var Fn = Function, global = (new Fn('return this'))();

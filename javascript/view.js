@@ -4,11 +4,59 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var NomsAgence           = JSON.parse(require("text!data/nomsAgence.json")),
-        CodesNAF             = JSON.parse(require("text!data/codesNAF.json")),
-        OffresTelFixeCentrex = JSON.parse(require("text!data/offresTelFixeCentrex.json"));
+    var nomsAgence           = JSON.parse(require("text!data/nomsAgence.json")),
+        codesNAF             = JSON.parse(require("text!data/codesNAF.json")),
+        offresTelFixeCentrex = JSON.parse(require("text!data/offresTelFixeCentrex.json"));
 
-    var OffresTelFixeCentrexTemplate = require("text!templates/offresTelFixeCentrex.html");
+    var offresTelFixeCentrexTemplate = require("text!templates/offresTelFixeCentrex.html");
+
+    function _initBtnCollapse() {
+        var $buttonBouyguesTelecom                           = $("#buttonBouyguesTelecom"),
+            $buttonGammeProposeeAuClient                     = $("#buttonGammeProposeeAuClient"),
+            $buttonIdentificationClient                      = $("#buttonIdentificationClient"),
+            $buttonIdentificationClientRelationContractuelle = $("#buttonIdentificationClientRelationContractuelle"),
+            $buttonSolutionTelephonie                        = $("#buttonSolutionTelephonie");
+
+        $buttonBouyguesTelecom.on("click", function (event) {
+            if ($buttonBouyguesTelecom.text() === "Réduire") {
+                $buttonBouyguesTelecom.text("Déplier");
+            } else {
+                $buttonBouyguesTelecom.text("Réduire");
+            }
+        });
+
+        $buttonGammeProposeeAuClient.on("click", function (event) {
+            if ($buttonGammeProposeeAuClient.text() === "Réduire") {
+                $buttonGammeProposeeAuClient.text("Déplier");
+            } else {
+                $buttonGammeProposeeAuClient.text("Réduire");
+            }
+        });
+
+        $buttonIdentificationClient.on("click", function (event) {
+            if ($buttonIdentificationClient.text() === "Réduire") {
+                $buttonIdentificationClient.text("Déplier");
+            } else {
+                $buttonIdentificationClient.text("Réduire");
+            }
+        });
+
+        $buttonIdentificationClientRelationContractuelle.on("click", function (event) {
+            if ($buttonIdentificationClientRelationContractuelle.text() === "Réduire") {
+                $buttonIdentificationClientRelationContractuelle.text("Déplier");
+            } else {
+                $buttonIdentificationClientRelationContractuelle.text("Réduire");
+            }
+        });
+
+        $buttonSolutionTelephonie.on("click", function (event) {
+            if ($buttonSolutionTelephonie.text() === "Réduire") {
+                $buttonSolutionTelephonie.text("Déplier");
+            } else {
+                $buttonSolutionTelephonie.text("Réduire");
+            }
+        });
+    }
 
     function _inputDate() {
         var $inputDate = $("#inputDate");
@@ -27,7 +75,7 @@ define(function (require, exports, module) {
     function _initNomAgence() {
         var $inputNomAgence = $("#inputNomAgence");
 
-        $.each(NomsAgence, function (index, nom) {
+        $.each(nomsAgence, function (index, nom) {
             $inputNomAgence.append(new Option(nom, nom));
         });
     }
@@ -39,14 +87,14 @@ define(function (require, exports, module) {
         var $inputCodeNAF     = $("#inputCodeNAF"),
             $inputCodeNAFDesc = $("#inputCodeNAFDesc");
 
-        $.each(CodesNAF, function (code, desc) {
+        $.each(codesNAF, function (code, desc) {
             $inputCodeNAF.append(new Option(code, code));
         });
 
-        $inputCodeNAFDesc.text(CodesNAF[$inputCodeNAF.val()]);
+        $inputCodeNAFDesc.text(codesNAF[$inputCodeNAF.val()]);
 
         $inputCodeNAF.on("change", function (event) {
-            $inputCodeNAFDesc.text(CodesNAF[event.target.value]);
+            $inputCodeNAFDesc.text(codesNAF[event.target.value]);
         });
     }
 
@@ -63,7 +111,7 @@ define(function (require, exports, module) {
     function _initOffresTelFixeCentrexRow(id) {
         var $tabTelFixeCentrex = $("#tableOffresTelFixeCentrex tbody");
 
-        $tabTelFixeCentrex.append(OffresTelFixeCentrexTemplate.replace(/@id/g, id));
+        $tabTelFixeCentrex.append(offresTelFixeCentrexTemplate.replace(/@id/g, id));
 
         var $inputOffresTelFixeCentrex         = $("#inputOffresTelFixeCentrex" + id),
             $offresTelFixeCentrexEngagement    = $("#offresTelFixeCentrexEngagement" + id),
@@ -73,20 +121,20 @@ define(function (require, exports, module) {
             $offresTelFixeCentrexMontantBrut   = $("#offresTelFixeCentrexMontantBrut" + id),
             $offresTelFixeCentrexMontantNet    = $("#offresTelFixeCentrexMontantNet" + id);
 
-        $.each(OffresTelFixeCentrex, function (key, value) {
+        $.each(offresTelFixeCentrex, function (key, value) {
             $inputOffresTelFixeCentrex.append(new Option(key, key));
         });
 
-        $offresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].engagement);
-        $offresTelFixeCentrexPrixBrut.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixBrut + " €");
-        $offresTelFixeCentrexPrixNet.text(OffresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixNet + " €");
+        $offresTelFixeCentrexEngagement.text(offresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].engagement);
+        $offresTelFixeCentrexPrixBrut.text(offresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixBrut + " €");
+        $offresTelFixeCentrexPrixNet.text(offresTelFixeCentrex[$inputOffresTelFixeCentrex.val()].prixNet + " €");
         $offresTelFixeCentrexMontantBrut.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
         $offresTelFixeCentrexMontantNet.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
 
         $inputOffresTelFixeCentrex.on("change", function (event) {
-            $offresTelFixeCentrexEngagement.text(OffresTelFixeCentrex[event.target.value].engagement);
-            $offresTelFixeCentrexPrixBrut.text(OffresTelFixeCentrex[event.target.value].prixBrut + " €");
-            $offresTelFixeCentrexPrixNet.text(OffresTelFixeCentrex[event.target.value].prixNet + " €");
+            $offresTelFixeCentrexEngagement.text(offresTelFixeCentrex[event.target.value].engagement);
+            $offresTelFixeCentrexPrixBrut.text(offresTelFixeCentrex[event.target.value].prixBrut + " €");
+            $offresTelFixeCentrexPrixNet.text(offresTelFixeCentrex[event.target.value].prixNet + " €");
             $offresTelFixeCentrexMontantBrut.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixBrut.text()) + " €");
             $offresTelFixeCentrexMontantNet.text(parseFloat($inputOffresTelFixeCentrexQuantite.val()) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
         });
@@ -96,8 +144,6 @@ define(function (require, exports, module) {
             $offresTelFixeCentrexMontantNet.text(parseFloat(event.target.value) * parseFloat($offresTelFixeCentrexPrixNet.text()) + " €");
         });
     }
-
-    var i = 0;
 
     function _initOffresTelFixeCentrex() {
         $("#ajouterOffresTelFixeCentrex").on("click", function (event) {
@@ -113,7 +159,7 @@ define(function (require, exports, module) {
         $("#supprimerOffresTelFixeCentrex").on("click", function (event) {
             var count = $('#tableOffresTelFixeCentrex tbody tr').length;
 
-            if (!$("#supprimerOffresTelFixeCentrex").hasClass("disabled")) {
+            if ($("#supprimerOffresTelFixeCentrex").hasClass("disabled") === false) {
                 if (count === 2) {
                     $("#supprimerOffresTelFixeCentrex").toggleClass("disabled");
                 }
@@ -126,22 +172,12 @@ define(function (require, exports, module) {
     }
 
     function _initView() {
-        /* Date */
+        _initBtnCollapse();
         _inputDate();
-
-        /* Nom d'agence */
         _initNomAgence();
-
-        /* Gamme */
         _initGamme();
-
-        /* Code NAF */
         _initCodeNAF();
-
-        /* Nature */
         _initNature();
-
-        /* Téléphonie Fixe Centrex */
         _initOffresTelFixeCentrex();
     }
 

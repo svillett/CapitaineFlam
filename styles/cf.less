@@ -29,10 +29,6 @@
 .footer-links {
   margin: 10px 0;
 }
-.footer-links li {
-  display: inline;
-  margin-right: 10px;
-}
 
 /* Legends */
 legend {
@@ -51,7 +47,14 @@ legend {
 
 /* A bigger line break */
 .line-break {
-	padding-top: 50px;
+	padding-top: 70px;
+}
+
+/* The borders are only displayed on wild screens */
+@media (min-width: 768px) {
+	.bordered {
+		border-left: 1px solid @cf-light-grey;
+	}
 }
 
 /* Mandatory fields are marked with a red star */
@@ -72,13 +75,6 @@ legend {
 .help-block-orange {
 	color: @cf-light-orange;
 	font-weight: bold;
-}
-
-/* The borders are only displayed on wild screens */
-@media (min-width: 768px) {
-	.bordered {
-		border-left: 1px solid @cf-light-grey;
-	}
 }
 
 /* Don't focus the select inputs */
