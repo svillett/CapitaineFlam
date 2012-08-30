@@ -429,9 +429,15 @@
                 </fieldset>
                 <div class="container-fuild collapse in bordered" id="divSolutionTelephonie">
                     <div class="row-fluid">
-                        <div class="span10 offset1 scrollable">
+                        <div class="span10 offset1 line-break-small scrollable">
                             <table class="table table-striped table-hover" id="tableOffresTelFixeCentrex">
-                                <caption>Téléphonie Fixe Centrex</caption>
+                                <caption>
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-mini" id="ajouterOffresTelFixeCentrex">Ajouter</button>
+                                        <button class="btn btn-mini disabled" id="supprimerOffresTelFixeCentrex">Supprimer</button>
+                                    </div>
+                                    Téléphonie Fixe Centrex
+                                </caption>
                                 <thead>
                                     <tr>
                                         <th>Offres</th>
@@ -451,10 +457,6 @@
                                     <!-- Populated by javascript -->
                                 </tbody>
                             </table>
-                            <div class="btn-group pull-right">
-                                <button class="btn btn-mini" id="ajouterOffresTelFixeCentrex">Ajouter</button>
-                                <button class="btn btn-mini disabled" id="supprimerOffresTelFixeCentrex">Supprimer</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -472,7 +474,7 @@
 
     <!-- Page footer -->
     <footer class="footer">
-        <p class="pull-right"><a href="#">Retour au début</a></p>
+        <p class="pull-right"><a href="#">Retour</a></p>
         <p>Captitaine Flam</p>
         <p>Version 1.0</p>
         <p><a href="http://www.bouyguestelecom-entreprises.fr/">&copy; Bouygues Telecom 2012</a></p>
