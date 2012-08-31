@@ -25,6 +25,7 @@ define(function (require, exports, module) {
     }
 
     function _onReady() {
+        console.log("Capitaine Flam is ready !")
     }
 
     _initCf();

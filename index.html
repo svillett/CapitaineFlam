@@ -40,7 +40,7 @@
             <div class="span10 offset1">
                 <fieldset>
                     <legend class="legend1">Bouygues Telecom</legend>
-                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divBouyguesTelecom">Réduire</button>
+                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divBouyguesTelecom">Masquer</button>
                 </fieldset>
                 <div class="container-fuild collapse in bordered" id="divBouyguesTelecom">
                     <div class="row-fluid">
@@ -48,7 +48,7 @@
                             <div class="control-group required date">
                                 <label class="control-label" for="inputDate">Date<b class="mandatory"></b></label>
                                 <div class="controls">
-                                    <input class="input-small" id="inputDate" type="text" value="1/1/1979">
+                                    <input class="input-small date-pickable" id="inputDate" type="text" value="1/1/1979">
                                 </div>
                             </div>
                             <div class="control-group required text">
@@ -146,20 +146,20 @@
                 <div class="line-break"></div>
                 <fieldset>
                     <legend class="legend1">Gamme proposée au client</legend>
-                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divGammeProposeeAuClient">Réduire</button>
+                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divGammeProposeeAuClient">Masquer</button>
                 </fieldset>
                 <div class="container-fuild collapse in bordered" id="divGammeProposeeAuClient">
                     <div class="row-fluid">
-                        <div class="span12 form-horizontal scrollable">
+                        <div class="span12 form-horizontal">
                             <div class="control-group">
                                 <label class="control-label" for="inputGamme">Gamme</label>
                                 <div class="controls">
-                                    <div class="btn-group" id="inputGamme" data-toggle="buttons-radio">
-                                        <button type="button" id="gammeSansRemise" class="btn btn-small btn-primary active">Sans remise</button>
-                                        <button type="button" id="gammeAvecRemise" class="btn btn-small btn-primary">Avec remise</button>
-                                        <button type="button" id="gammeOffresPro" class="btn btn-small btn-primary">Offres Pro</button>
-                                        <button type="button" id="gammeMarchePublic" class="btn btn-small btn-primary">Marché Public</button>
-                                    </div>
+                                    <select class="input-medium" id="inputGamme">
+                                        <option>Sans remise</option>
+                                        <option>Avec remise</option>
+                                        <option>Offres Pro</option>
+                                        <option>Marché Public</option>
+                                    </select>
                                     <span class="help-block help-block-orange">Sans remise / avec avantages multi-lignes entreprises</span>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                         <div class="span11 offset1">
                             <fieldset>
                                 <legend class="legend2">Identification Client</legend>
-                                <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divIdentificationClient">Réduire</button>
+                                <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divIdentificationClient">Masquer</button>
                             </fieldset>
                             <div class="container-fuild collapse in bordered" id="divIdentificationClient">
                                 <div class="row-fluid">
@@ -370,7 +370,7 @@
                                     <div class="span11 offset1">
                                         <fieldset>
                                             <legend class="legend3">Relation contractuelle</legend>
-                                            <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divIdentificationClientRelationContractuelle">Réduire</button>
+                                            <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divIdentificationClientRelationContractuelle">Masquer</button>
                                         </fieldset>
                                         <div class="container-fuild collapse in bordered" id="divIdentificationClientRelationContractuelle">
                                             <div class="row-fluid">
@@ -424,11 +424,12 @@
                 <div class="line-break"></div>
                 <fieldset>
                     <legend class="legend1">Solutions de téléphonie</legend>
-                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divSolutionTelephonie">Réduire</button>
+                    <button type="button" class="btn btn-link btn-mini btn-collapse pull-right" data-toggle="collapse" data-target="#divSolutionTelephonie">Masquer</button>
                 </fieldset>
                 <div class="container-fuild collapse in bordered" id="divSolutionTelephonie">
                     <div class="row-fluid">
-                        <div class="span10 offset1 line-break-small scrollable">
+                        <div class="span10 offset1 scrollable">
+                            <div class="line-break-small"></div>
                             <table class="table table-striped table-hover" id="tableOffresTelFixeCentrex">
                                 <caption>
                                     <div class="btn-group pull-right">
@@ -480,8 +481,8 @@
     </footer>
 
     <!-- Javascript is declared here to increase page loading speed -->
-    <script src="thirdparty/jquery-1.8.0.js"></script>
-    <script src="thirdparty/bootstrap/js/bootstrap.js"></script>
+    <script src="thirdparty/jquery-1.8.0.min.js"></script>
+    <script src="thirdparty/bootstrap/js/bootstrap.min.js"></script>
     <script src="thirdparty/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="thirdparty/less-1.3.0.min.js"></script>
     <script src="thirdparty/require.js" data-main="cf"></script>

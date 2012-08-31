@@ -15,7 +15,7 @@
 	line-height: 26px;
 }
 
-/* Footer */
+/* Page footer */
 .footer {
   padding: 70px 50px;
   margin-top: 70px;
@@ -25,9 +25,6 @@
 .footer p {
   margin-bottom: 0;
   color: @cf-grey;
-}
-.footer-links {
-  margin: 10px 0;
 }
 
 /* Legends */
@@ -45,19 +42,19 @@ legend {
 	font-size: 18px;
 }
 
+/* Borders are only displayed on wild screens */
+@media (min-width: 768px) {
+	.bordered {
+		border-left: 1px solid @cf-light-grey;
+	}
+}
+
 /* line breaks */
 .line-break {
 	padding-top: 70px;
 }
 .line-break-small {
 	padding-top: 20px;
-}
-
-/* The borders are only displayed on wild screens */
-@media (min-width: 768px) {
-	.bordered {
-		border-left: 1px solid @cf-light-grey;
-	}
 }
 
 /* Mandatory fields are marked with a red star */
@@ -90,7 +87,7 @@ select:focus {
 	overflow-x: auto;
 }
 
-/* Tables */
+/* Tables cation */
 table caption {
 	padding-bottom: 20px;
 	text-align: left;
