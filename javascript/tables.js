@@ -63,6 +63,65 @@ define(function (require, exports, module) {
         $ajouterOffresTelFixeCentrex.trigger("click");
     }
 
-    _initOffresTelFixeCentrex();
+    function _initOffresTelFixePreselection() {
+        var $ajouterOffresTelFixePreselection   = $("#ajouterOffresTelFixePreselection"),
+            $supprimerOffresTelFixePreselection = $("#supprimerOffresTelFixePreselection"),
+            $tableOffresTelFixePreselectionBody = $("#tableOffresTelFixePreselection tbody"),
+            offresTelFixePreselection           = JSON.parse(require("text!data/offresTelFixePreselection.json")),
+            offresTelFixePreselectionTemplate   = require("text!templates/offresTelFixePreselection.html");
 
+        $ajouterOffresTelFixePreselection.on("click", function (event) {
+            var count = $tableOffresTelFixePreselectionBody.find("tr").length;
+
+            if (count === 1) {
+                $supprimerOffresTelFixePreselection.removeClass("disabled");
+            }
+
+            $tableOffresTelFixePreselectionBody.append(offresTelFixePreselectionTemplate.replace(/@id/g, count));
+
+            var $inputOffresTelFixePreselection         = $("#inputOffresTelFixePreselection" + count),
+                $offresTelFixePreselectionEngagement    = $("#offresTelFixePreselectionEngagement" + count),
+                $inputOffresTelFixePreselectionQuantite = $("#inputOffresTelFixePreselectionQuantite" + count),
+                $offresTelFixePreselectionPrixBrut      = $("#offresTelFixePreselectionPrixBrut" + count),
+                $offresTelFixePreselectionPrixNet       = $("#offresTelFixePreselectionPrixNet" + count),
+                $offresTelFixePreselectionMontantBrut   = $("#offresTelFixePreselectionMontantBrut" + count),
+                $offresTelFixePreselectionMontantNet    = $("#offresTelFixePreselectionMontantNet" + count);
+
+            $.each(offresTelFixePreselection, function (key, value) {
+                $inputOffresTelFixePreselection.append(new Option(key, key));
+            });
+
+            $inputOffresTelFixePreselection.on("change", function (event) {
+                $offresTelFixePreselectionEngagement.text(offresTelFixePreselection[event.target.value].engagement);
+                $offresTelFixePreselectionPrixBrut.text(offresTelFixePreselection[event.target.value].prixBrut + " €");
+                $offresTelFixePreselectionPrixNet.text(offresTelFixePreselection[event.target.value].prixNet + " €");
+
+                $inputOffresTelFixePreselectionQuantite.trigger("change");
+            });
+
+            $inputOffresTelFixePreselectionQuantite.on("change", function (event) {
+                $offresTelFixePreselectionMontantBrut.text(parseFloat(event.target.value) * parseFloat($offresTelFixePreselectionPrixBrut.text()) + " €");
+                $offresTelFixePreselectionMontantNet.text(parseFloat(event.target.value) * parseFloat($offresTelFixePreselectionPrixNet.text()) + " €");
+            });
+
+            $inputOffresTelFixePreselection.trigger("change");
+        });
+
+        $supprimerOffresTelFixePreselection.on("click", function (event) {
+            var count = $tableOffresTelFixePreselectionBody.find("tr").length;
+
+            if (count > 1) {
+                if (count === 2) {
+                    $supprimerOffresTelFixePreselection.addClass("disabled");
+                }
+
+                $tableOffresTelFixePreselectionBody.find("tr:last").remove();
+            }
+        });
+
+        $ajouterOffresTelFixePreselection.trigger("click");
+    }
+
+    _initOffresTelFixeCentrex();
+    _initOffresTelFixePreselection();
 });
